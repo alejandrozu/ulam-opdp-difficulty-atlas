@@ -18,6 +18,8 @@ The OPDP framework application, generated rationales, workbook, methodology, rep
 
 The assessment is a provisional, rule-based editorial first pass dated 2026-07-31. It is not expert certification, an empirical benchmark run, or a complete current-literature status audit.
 
+The 2026-08-04 ChatGPT 5.6 Sol Ultra companion derives a model-specific 0–1000 full-solution difficulty estimate from those OPDP inputs. Its scores and rationales were also prepared by **Alejandro Zarzuelo Urdiales with ChatGPT 5.6 Sol Ultra**. No problem was empirically attempted; the scores are ordinal editorial estimates under the protocol stated in the rationale file, not probabilities or claims of solvability.
+
 ## Rights
 
 Public visibility of this repository does not, by itself, grant additional rights over original analysis or third-party source material. Reusers remain responsible for complying with the UnsolvedMath dataset license, preserving attribution, and respecting any per-record rights notices or underlying-source restrictions.

@@ -17,7 +17,9 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 | [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.2.xlsx`](data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.2.xlsx) | Filterable workbook with the atlas, scoring inputs, formulas, rationales, source index, QA queue, and rubric. |
 | [`Ulam_OPDP_Integrated_Report_v1.0.pdf`](docs/Ulam_OPDP_Integrated_Report_v1.0.pdf) | Integrated, easy-to-read report combining the analysis and methodology. |
 | [`Ulam_OPDP_Methodology_v1.0.docx`](docs/Ulam_OPDP_Methodology_v1.0.docx) | Editable methodology document. |
-| [`CHECKSUMS.sha256`](CHECKSUMS.sha256) | SHA-256 checksums for every release deliverable. |
+| [`Ulam_UnsolvedMath_ChatGPT_5.6_Sol_Ultra_Difficulty_v1.0.json`](data/Ulam_UnsolvedMath_ChatGPT_5.6_Sol_Ultra_Difficulty_v1.0.json) | Barebones 5,426-record import file containing only each problem's ID, display number, name, statement, and 0–1000 ChatGPT difficulty. |
+| [`Ulam_UnsolvedMath_ChatGPT_5.6_Sol_Ultra_Rationales_v1.0.json`](data/Ulam_UnsolvedMath_ChatGPT_5.6_Sol_Ultra_Rationales_v1.0.json) | Companion methodology, protocol, limitations, per-problem explanation, source inputs, and reproducible calculation trace. |
+| [`CHECKSUMS.sha256`](CHECKSUMS.sha256) | SHA-256 checksums for the release deliverables and companion JSON files. |
 
 All five original deliverables are also attached to the [tagged GitHub release](https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/releases/tag/v1.2.0-opdp1.0).
 
@@ -55,6 +57,26 @@ The remainder of each record contains:
 6. Treat recovered source URLs as unverified candidates and honor the explicit Ulam-fallback marker.
 7. Sanitize source text before browser rendering when `source_text.transport_qa` reports control characters.
 
+## ChatGPT 5.6 Sol Ultra companion
+
+The companion adds one model-specific full-solution difficulty integer to every source record. Join either file to the main atlas only by numeric `problem_id`.
+
+The first JSON is intentionally minimal and contains no scoring formula, intermediate dimensions, rationale, or methodology. Its record shape is:
+
+```json
+{
+  "problem_id": 1,
+  "problem_number": "MPP-001",
+  "name": "P versus NP Problem",
+  "statement": "Does P = NP? ...",
+  "chatgpt_difficulty_0_1000": 936
+}
+```
+
+The second JSON defines **ChatGPT Full-Solution Difficulty 1000 (CFSD-1000) v1.0** and explains every assigned score. It combines all core OPDP dimensions under a fixed ChatGPT 5.6 Sol Ultra research protocol, records the component calculation, and preserves status and data-quality caveats.
+
+The scale is an ordinal editorial estimate of how difficult a complete, novel, independently verified resolution would be for that protocol. It is not a success probability, an empirical benchmark, a replacement for the multidimensional OPDP, or evidence that any problem was attempted. One-point differences are not epistemically meaningful.
+
 ## Validation
 
 The release passed two independent validation passes with zero errors and zero warnings. Checks included:
@@ -66,6 +88,8 @@ The release passed two independent validation passes with zero errors and zero w
 - enum and registry membership;
 - summary and corpus-audit recomputation;
 - explicit testing of the 18 null and 37 valid-zero tractability cases.
+
+The ChatGPT 5.6 Sol Ultra companion was separately regenerated and independently checked across all 5,426 records. Its checks included exact ID/name/statement projection from the canonical assessment export, an intentionally restricted first-file schema, cross-file score equality, integer/range and UTF-8 checks, full formula and calculation-trace recomputation, and summary/band-count recomputation.
 
 Frozen source snapshot SHA-256:
 
