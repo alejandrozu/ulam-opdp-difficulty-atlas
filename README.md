@@ -18,6 +18,8 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 | [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.5.xlsx`](data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.5.xlsx) | Expanded workbook with dashboard, atlas, formula audit, all rationales, statements, QA queue, and rubric. |
 | [`OPDP_v1.5_APPEND_ONLY_NOTES.md`](docs/OPDP_v1.5_APPEND_ONLY_NOTES.md) | Compatibility contract, source snapshots, new-record summary, and validation evidence. |
 | [`OPDP_v1.5_DISTRIBUTION_COMPARISON.md`](docs/OPDP_v1.5_DISTRIBUTION_COMPARISON.md) | Statistical comparison of the preserved cohort and AIM additions, with interpretation guidance for problem selection. |
+| [`OPDP_v1.5_Visual_Brief.pdf`](docs/OPDP_v1.5_Visual_Brief.pdf) | Five-page, image-first summary of how the 3,359 AIM additions differ from the previous 5,426 problems. |
+| [`OPDP_v1.5_X_Figures.zip`](docs/OPDP_v1.5_X_Figures.zip) | Ten standalone 1600×1200 PNG figures ready for social posts and presentations. |
 | [`Ulam_UnsolvedMath_OPDP_Assessments_v1.2.json.gz`](data/Ulam_UnsolvedMath_OPDP_Assessments_v1.2.json.gz) | Historical 5,426-record compatibility-base payload. |
 | [`Ulam_UnsolvedMath_OPDP_Assessments_v1.2.json`](https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/releases/download/v1.2.0-opdp1.0/Ulam_UnsolvedMath_OPDP_Assessments_v1.2.json) | Uncompressed 85 MB JSON, attached to the GitHub release because it exceeds GitHub's browser source-upload limit. |
 | [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.2.xlsx`](data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.2.xlsx) | Filterable workbook with the atlas, scoring inputs, formulas, rationales, source index, QA queue, and rubric. |
