@@ -78,7 +78,7 @@ The remainder of each record contains:
 
 ## ChatGPT 5.6 Sol Ultra companion
 
-The companion adds one model-specific full-solution difficulty integer to every source record. Join either file to the main atlas only by numeric `problem_id`.
+The v1.0 companion adds one model-specific full-solution difficulty integer to each of the 5,426 records in its frozen v1.2 scope. Join either file to the main atlas only by numeric `problem_id`.
 
 The first JSON is intentionally minimal and contains no scoring formula, intermediate dimensions, rationale, or methodology. Its record shape is:
 
