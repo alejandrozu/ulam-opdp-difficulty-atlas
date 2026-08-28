@@ -14,8 +14,8 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 
 | File | Purpose |
 |---|---|
-| [`Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz`](data/Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz) | **Recommended website-import payload.** Decompresses to the complete 15,458-record append-only JSON. |
-| [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx`](data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx) | Current workbook with the complete profile table and overall rationales, dashboard, cohort analysis, source summaries, compact formula audit, QA queue, and rubric. The canonical JSON retains verbatim source rows and all ten axis rationales. |
+| [`Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz`](https://media.githubusercontent.com/media/alejandrozu/ulam-opdp-difficulty-atlas/main/data/Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz) | **Recommended website-import payload.** Direct Git LFS download; decompresses to the complete 15,458-record append-only JSON. |
+| [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx`](https://media.githubusercontent.com/media/alejandrozu/ulam-opdp-difficulty-atlas/main/data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx) | Direct Git LFS download of the current workbook, with the complete profile table and overall rationales, dashboard, cohort analysis, source summaries, compact formula audit, QA queue, and rubric. The canonical JSON retains verbatim source rows and all ten axis rationales. |
 | [`OPDP_v1.6_Source_Provenance.json.gz`](data/OPDP_v1.6_Source_Provenance.json.gz) | Machine-readable source sidecar joining every problem to its cohort, Ulam collection, and finest recoverable natural source document. |
 | [`OPDP_v1.6_Cohort_Dimension_Summary.csv`](data/OPDP_v1.6_Cohort_Dimension_Summary.csv) | Per-cohort descriptive statistics for the 20 analyzed OPDP dimensions. |
 | [`OPDP_v1.6_Cohort_Comparisons.csv`](data/OPDP_v1.6_Cohort_Comparisons.csv) | Pairwise cohort contrasts with effect sizes, uncertainty intervals, descriptive p-values, and multiplicity-adjusted q-values. |
@@ -44,6 +44,8 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 | [`CHECKSUMS.sha256`](CHECKSUMS.sha256) | SHA-256 checksums for the release deliverables and companion JSON files. |
 
 All five original deliverables are also attached to the [tagged v1.2 GitHub release](https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/releases/tag/v1.2.0-opdp1.0). The v1.2 and v1.5 files remain available as immutable historical compatibility artifacts.
+
+The v1.6 JSON and workbook are stored with Git LFS. The links above target GitHub's media endpoint and return the actual binary files; `raw.githubusercontent.com` returns only the small LFS pointer. A normal clone with Git LFS installed materializes both files automatically.
 
 ## v1.6 append-only compatibility
 
