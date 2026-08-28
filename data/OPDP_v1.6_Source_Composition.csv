@@ -1,0 +1,4 @@
+﻿cohort_code,records,identified_source_records,source_assignment_coverage,source_collections,natural_source_documents,source_hhi,effective_sources_inverse_hhi,effective_sources_entropy,minimum_source_size,median_source_size,maximum_source_size
+V0,5426,5040,0.9288610394397346,12,99,0.050753180901990436,19.703198542985945,35.6957997909394,1,17,632
+V1,3359,3359,1.0,1,162,0.009478341568966295,105.50368888099267,125.68747169490243,1,18.0,99
+V2,6673,6673,1.0,1,1106,0.0015307127642795989,653.2904300112968,819.3509897835388,1,5.0,33

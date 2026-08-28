@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "input_records": 15458,
+  "base_records_checked": 8785,
+  "base_records_changed": 0,
+  "cohort_counts": {
+    "V0": 5426,
+    "V1": 3359,
+    "V2": 6673
+  },
+  "unique_problem_ids": 15458,
+  "source_assignment_records": 15458,
+  "natural_source_documents": 1367,
+  "owr_records": 6673,
+  "owr_distinct_reports": 1106,
+  "owr_high_confidence_assignments": 6673,
+  "output_files": {
+    "OPDP_v1.6_Cohort_Comparisons.csv": {
+      "bytes": 33742,
+      "sha256": "BC546D593EBB77F30315CF80064973F05370F3C094C92FDBC3848E85628D9AEA"
+    },
+    "OPDP_v1.6_Cohort_Dimension_Summary.csv": {
+      "bytes": 8452,
+      "sha256": "10574428238B13108EA41643C971C1403789BC72413449DA7CFE0B8D63C643FB"
+    },
+    "OPDP_v1.6_Source_Clustering.csv": {
+      "bytes": 5506,
+      "sha256": "12BBF97274284BD9C9B134CA7F917083643575AC50E01E1E41BA6B5B2467E349"
+    },
+    "OPDP_v1.6_Source_Composition.csv": {
+      "bytes": 533,
+      "sha256": "E542CC2737EB2C198DA66011931097108B5DF93729EA682B92B21DC5A07A5C44"
+    },
+    "OPDP_v1.6_Source_Provenance.json.gz": {
+      "bytes": 526612,
+      "sha256": "1D27CE3B1CC155B94C2F6AE8C66E6594535B63DB4D44D28A916B5A94AB3B3FA7"
+    },
+    "OPDP_v1.6_Source_Summary.csv": {
+      "bytes": 1278447,
+      "sha256": "54154671B8366CD4040C8AB62D720511DEA42A2A6E1BCE342B71DEA11B8F01B3"
+    }
+  }
+}

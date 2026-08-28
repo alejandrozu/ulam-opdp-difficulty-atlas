@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-08-26T22:20:09.186Z",
+  "target": {
+    "path": "Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json",
+    "bytes": 262396647,
+    "sha256": "C4B838A85B1FA60E6C1FA3C78A9DE6EA79FD0F72F331985CBDB787C310735C97",
+    "UTF8_valid": true
+  },
+  "frozen_source": {
+    "path": "problems.append-only-v1.6.0.json",
+    "bytes": 59362417,
+    "sha256": "52F4D1C618ACC02256045F0B44EDEA2E059B2C90FF40F51F1F628B16C3E9FC0E",
+    "UTF8_valid": true,
+    "expected_sha256": "52F4D1C618ACC02256045F0B44EDEA2E059B2C90FF40F51F1F628B16C3E9FC0E"
+  },
+  "status": "pass",
+  "passed": true,
+  "error_count": 0,
+  "warning_count": 0,
+  "issue_types": 0,
+  "issues": [],
+  "validated_facts": {
+    "records_total": 15458,
+    "unique_problem_ids": 15458,
+    "first_problem_id": 1,
+    "last_problem_id": 30006673,
+    "rationale_fields_per_record": 10,
+    "intentional_null_tractability_records": 627,
+    "valid_zero_tractability_records": 39,
+    "duplicate_problem_number_groups": 35,
+    "records_in_duplicate_problem_number_groups": 86,
+    "surplus_problem_number_records": 51,
+    "forbidden_control_character_occurrences": 183,
+    "records_with_forbidden_control_characters": 68,
+    "source_url_fallback_records": 1501,
+    "malformed_duplicated_scheme_source_urls": 2,
+    "formula_canonicalized_tractability_score_ids": [3018, 3329, 3341, 2306069]
+  },
+  "checks_performed": [
+    "strict UTF-8 and JSON parse",
+    "duplicate object-key scan",
+    "record count/order/ID coverage",
+    "record field prefix and full field order",
+    "ten rationale keys",
+    "verbatim source_record and source_text equality",
+    "frozen source SHA-256",
+    "enum and registry membership",
+    "D/range/tier recomputation",
+    "AI relative/difficulty/range/fit recomputation",
+    "T/hour/probability recomputation",
+    "T null-versus-zero semantics",
+    "summary recomputation",
+    "documented duplicate/control/source-URL counts",
+    "four exact-mean T formula canonicalizations",
+    "fresh calculation state"
+  ]
+}

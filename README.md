@@ -1,12 +1,12 @@
 # Ulam OPDP Difficulty Atlas
 
-An auditable Open Problem Difficulty Profile (OPDP) for **8,785 problems**, expanded append-only from the UnsolvedMath v1.2.0 compatibility base with the 3,359 AIM Workshop Problem Lists additions in UnsolvedMath v1.5.0.
+An auditable Open Problem Difficulty Profile (OPDP) for **15,458 problems**, expanded append-only across three frozen UnsolvedMath cohorts: the original 5,426-record compatibility base, 3,359 AIM Workshop Problem Lists additions, and 6,673 Oberwolfach Reports Open Problems additions.
 
 **Author:** Alejandro Zarzuelo Urdiales with ChatGPT 5.6 Sol  
 
 **Original assessment date:** 2026-07-31
 
-**Append-only expansion date:** 2026-08-18
+**Latest append-only expansion date:** 2026-08-26
 
 The atlas replaces a single, ambiguous notion of “difficulty” with a granular profile covering intrinsic mathematical difficulty, AI-relative difficulty, human attention, tractability, verification burden, formalization burden, prerequisite depth, breadth, and tool leverage. Every problem includes concise public justifications so that assessments can be audited and revised.
 
@@ -14,7 +14,21 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 
 | File | Purpose |
 |---|---|
-| [`Ulam_UnsolvedMath_OPDP_Assessments_v1.5.json.gz`](data/Ulam_UnsolvedMath_OPDP_Assessments_v1.5.json.gz) | **Recommended website-import payload.** Decompresses to the complete 8,785-record append-only JSON. |
+| [`Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz`](data/Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz) | **Recommended website-import payload.** Decompresses to the complete 15,458-record append-only JSON. |
+| [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx`](data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx) | Current workbook with the complete profile table and overall rationales, dashboard, cohort analysis, source summaries, compact formula audit, QA queue, and rubric. The canonical JSON retains verbatim source rows and all ten axis rationales. |
+| [`OPDP_v1.6_Source_Provenance.json.gz`](data/OPDP_v1.6_Source_Provenance.json.gz) | Machine-readable source sidecar joining every problem to its cohort, Ulam collection, and finest recoverable natural source document. |
+| [`OPDP_v1.6_Cohort_Dimension_Summary.csv`](data/OPDP_v1.6_Cohort_Dimension_Summary.csv) | Per-cohort descriptive statistics for the 20 analyzed OPDP dimensions. |
+| [`OPDP_v1.6_Cohort_Comparisons.csv`](data/OPDP_v1.6_Cohort_Comparisons.csv) | Pairwise cohort contrasts with effect sizes, uncertainty intervals, descriptive p-values, and multiplicity-adjusted q-values. |
+| [`OPDP_v1.6_Source_Clustering.csv`](data/OPDP_v1.6_Source_Clustering.csv) | Source-associated variance summaries for calibration and heterogeneity analysis. |
+| [`OPDP_v1.6_Source_Summary.csv`](data/OPDP_v1.6_Source_Summary.csv) | Natural-source-level counts and dimension summaries, including individual Oberwolfach report DOIs where recoverable. |
+| [`OPDP_v1.6_Source_Composition.csv`](data/OPDP_v1.6_Source_Composition.csv) | Cohort source concentration, effective source counts, and related composition diagnostics. |
+| [`OPDP_v1.6_Analysis_Validation.json`](data/OPDP_v1.6_Analysis_Validation.json) | Machine-readable integrity checks for cohort membership, append-only equality, provenance coverage, and generated analysis tables. |
+| [`OPDP_v1.6_Main_Validation.json`](data/OPDP_v1.6_Main_Validation.json) | Independent strict-JSON, schema, source equality, summary, registry, D/AI/T, interval, tier, and null-semantics validation report. |
+| [`OPDP_v1.6_Workbook_Validation.json`](data/OPDP_v1.6_Workbook_Validation.json) | Workbook package, row-alignment, cached-formula, null/zero, and formula-delta validation evidence. |
+| [`OPDP_v1.6_APPEND_ONLY_NOTES.md`](docs/OPDP_v1.6_APPEND_ONLY_NOTES.md) | v1.6 compatibility contract, frozen snapshots, provenance rules, and validation evidence. |
+| [`OPDP_v1.6_SOURCE_AND_COHORT_COMPARISON.md`](docs/OPDP_v1.6_SOURCE_AND_COHORT_COMPARISON.md) | Rigorous comparison of the original, AIM, and Oberwolfach cohorts, both problem-weighted and source-aware. |
+| [`scripts/`](scripts/) | Reproducible source-analysis and workbook builders with usage instructions. |
+| [`Ulam_UnsolvedMath_OPDP_Assessments_v1.5.json.gz`](data/Ulam_UnsolvedMath_OPDP_Assessments_v1.5.json.gz) | Historical 8,785-record append-only website-import payload. |
 | [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.5.xlsx`](data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.5.xlsx) | Expanded workbook with dashboard, atlas, formula audit, all rationales, statements, QA queue, and rubric. |
 | [`OPDP_v1.5_APPEND_ONLY_NOTES.md`](docs/OPDP_v1.5_APPEND_ONLY_NOTES.md) | Compatibility contract, source snapshots, new-record summary, and validation evidence. |
 | [`OPDP_v1.5_DISTRIBUTION_COMPARISON.md`](docs/OPDP_v1.5_DISTRIBUTION_COMPARISON.md) | Statistical comparison of the preserved cohort and AIM additions, with interpretation guidance for problem selection. |
@@ -29,18 +43,28 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 | [`Ulam_UnsolvedMath_ChatGPT_5.6_Sol_Ultra_Rationales_v1.0.json`](data/Ulam_UnsolvedMath_ChatGPT_5.6_Sol_Ultra_Rationales_v1.0.json) | Companion methodology, protocol, limitations, per-problem explanation, source inputs, and reproducible calculation trace. |
 | [`CHECKSUMS.sha256`](CHECKSUMS.sha256) | SHA-256 checksums for the release deliverables and companion JSON files. |
 
-All five original deliverables are also attached to the [tagged GitHub release](https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/releases/tag/v1.2.0-opdp1.0).
+All five original deliverables are also attached to the [tagged v1.2 GitHub release](https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/releases/tag/v1.2.0-opdp1.0). The v1.2 and v1.5 files remain available as immutable historical compatibility artifacts.
 
-## v1.5 append-only compatibility
+## v1.6 append-only compatibility
 
 The expansion is deliberately non-destructive:
 
-- all 5,426 complete v1.2 OPDP records are retained exactly;
-- 3,359 new AIM records are appended at IDs `20000001`–`20003359`;
+- all 8,785 complete v1.5 OPDP records are retained exactly, including the frozen 5,426-record v1.2 base and 3,359 AIM additions;
+- 6,673 Oberwolfach Reports Open Problems records are appended at IDs `30000001`–`30006673`;
 - schema version, record schema, field order, rule version, and `problem_id` join semantics are unchanged;
-- later Ulam edits to legacy source rows are not imported in this release.
+- later Ulam edits to the 8,785 previously published source rows are not imported in this release.
 
-Consumers can replace the decompressed v1.2 payload with v1.5 without a schema migration. Existing records remain stable; only new primary keys appear.
+Consumers can replace the decompressed v1.5 payload with v1.6 without a schema migration. Existing records remain stable; only new primary keys appear. The three release cohorts are therefore exactly 5,426 original records, 3,359 AIM additions, and 6,673 Oberwolfach additions.
+
+### Source hierarchy
+
+The provenance sidecar distinguishes three levels that should not be conflated:
+
+1. **Release cohort** — original 5,426, AIM 3,359, or Oberwolfach 6,673.
+2. **Ulam collection** — the collection/set under which Ulam distributes the record.
+3. **Natural source document** — the finest recoverable origin: an exact Oberwolfach report DOI for the new cohort, an AIM workshop slug for AIM records, a parsed source-list reference for AMR records, or an explicitly marked fallback when no finer source can be established.
+
+The 6,673 newest records come from **1,106 distinct Oberwolfach reports**, not from 6,673 independent sources. Source-aware analyses therefore report both problem-weighted results and source-unit summaries; repeated problems from one report must not be treated as independent evidence about the wider universe of open problems.
 
 ## JSON integration
 
@@ -70,7 +94,7 @@ The remainder of each record contains:
 
 1. Use numeric `problem_id` as the canonical database key. `problem_number` is a display identifier and is not unique: 35 duplicate-number groups cover 86 records.
 2. Keep the two T namespaces separate: intrinsic difficulty tiers are T1–T5, while tractability bands are T0–T10.
-3. Preserve `null` versus zero. In the expanded export, 560 solved/ill-posed records intentionally have `tractability.score = null`; 37 records have the valid score T0.
+3. Preserve `null` versus zero. In the v1.6 export, 627 records intentionally have `tractability.score = null`; 39 records have the valid score T0.
 4. Keep `catalog_status` and `assessment_gate` visible. A score does not certify that a problem is currently open.
 5. The legacy L1–L5 field is source provenance and a weak prior, not the OPDP difficulty result.
 6. Treat recovered source URLs as unverified candidates and honor the explicit Ulam-fallback marker.
@@ -98,25 +122,26 @@ The scale is an ordinal editorial estimate of how difficult a complete, novel, i
 
 ## Validation
 
-The expanded release passed independent validation with zero errors and zero warnings. Checks included:
+The expanded release is built and checked under the unchanged `OPDP-1.0-rulepass-2026-07-31` assessment rule. Release validation includes:
 
 - strict UTF-8 and JSON parsing with duplicate-key detection;
-- 8,785 unique, ascending numeric IDs and complete append-only frozen-source equality;
+- 15,458 unique, ascending numeric IDs and complete append-only frozen-record equality for all 8,785 previously published records;
 - all ten per-problem rationale fields;
 - score, interval, tier, AI, tractability, human-hour, and probability-band recomputation;
 - enum and registry membership;
 - summary and corpus-audit recomputation;
-- formula and registry recomputation, including 560 intentional null and 37 valid-zero tractability cases;
-- deep equality of all 5,426 legacy records, with zero changes;
-- complete fields and all ten rationales for each of the 3,359 appended records;
-- workbook formula and visual QA across all seven sheets.
+- formula and registry recomputation, including 627 intentional null and 39 valid-zero tractability cases;
+- deep equality of all 8,785 v1.5 records, with zero changes;
+- complete fields and all ten rationales for each of the 6,673 appended records;
+- one-to-one source-sidecar alignment and recovery of 1,106 distinct Oberwolfach report sources;
+- workbook formula, content, and visual QA across every sheet.
 
 The ChatGPT 5.6 Sol Ultra companion was separately regenerated and independently checked across all 5,426 records. Its checks included exact ID/name/statement projection from the canonical assessment export, an intentionally restricted first-file schema, cross-file score equality, integer/range and UTF-8 checks, full formula and calculation-trace recomputation, and summary/band-count recomputation.
 
 Append-only composite source snapshot SHA-256:
 
 ```text
-E706B196A94A3E820FEC035DC839051013C5AF87474875A67886BB7979CC29FA
+52F4D1C618ACC02256045F0B44EDEA2E059B2C90FF40F51F1F628B16C3E9FC0E
 ```
 
 ## Interpretation and limitations
@@ -128,11 +153,13 @@ This is a reproducible **provisional editorial first pass**, not expert certific
 - Human specialist-hours are order-of-magnitude priors; unpublished work is unobserved.
 - Tractability forecasts independently checked partial progress in 100 combined expert-plus-AI hours, not full resolution.
 - Opportunity tags are high-precision filters; absence of a tag is not a negative judgment.
+- Cohort contrasts are observational and source-confounded. Differences may reflect source selection, report conventions, mathematical-field composition, time period, or extraction practice rather than an intrinsic change in the worldwide population of open problems.
+- Row-level p-values are descriptive because problems within a source document are dependent. Source-balanced summaries, effect sizes, uncertainty intervals, and multiplicity-adjusted q-values should be read together.
 
 Expert corrections should modify stored inputs, regenerate every derived field and rationale, and preserve an attributable override history.
 
 ## Provenance and reuse
 
-The compatibility base is UnsolvedMath v1.2.0; additions were frozen from UnsolvedMath v1.5.0 at Hugging Face revision `c423bd6c88433fe614b0f8b206201f580e0a7355`. Ulam AI declares the dataset CC BY 4.0. See [`NOTICE.md`](NOTICE.md) for attribution, source links, and reuse cautions.
+The compatibility base is UnsolvedMath v1.2.0; AIM additions were frozen from UnsolvedMath v1.5.0 at Hugging Face revision `c423bd6c88433fe614b0f8b206201f580e0a7355`; Oberwolfach additions were frozen from UnsolvedMath v1.6.0 at revision `b9437975f3c873f635a13c48f8b022f5ba80898a`. Ulam AI declares the dataset CC BY 4.0. Underlying source documents may carry their own attribution or reuse terms. See [`NOTICE.md`](NOTICE.md) for source links, hashes, and reuse cautions.
 
 Public repository visibility does not itself grant additional rights over original analysis beyond the rights held by the respective contributors and source licensors.

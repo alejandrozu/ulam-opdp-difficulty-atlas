@@ -1,3 +1,9 @@
 data/Ulam_UnsolvedMath_ChatGPT_5.6_Sol_Ultra_Difficulty_v1.0.json text eol=lf
 data/Ulam_UnsolvedMath_ChatGPT_5.6_Sol_Ultra_Rationales_v1.0.json text eol=lf
 CHECKSUMS.sha256 text eol=lf
+data/OPDP_v1.6_*.csv text eol=lf
+data/OPDP_v1.6_*_Validation.json text eol=lf
+docs/OPDP_v1.6_*.md text eol=lf
+scripts/*.py text eol=lf
+scripts/*.mjs text eol=lf
+scripts/*.md text eol=lf

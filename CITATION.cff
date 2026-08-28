@@ -2,18 +2,21 @@ cff-version: 1.2.0
 message: "If you use this atlas, please cite it using the metadata below."
 title: "Ulam OPDP Difficulty Atlas"
 type: dataset
-version: "1.5.0-opdp-1.0-append-only"
-date-released: 2026-08-18
+version: "1.6.0-opdp-1.0-append-only"
+date-released: 2026-08-26
 authors:
   - family-names: "Zarzuelo Urdiales"
     given-names: "Alejandro"
 repository-code: "https://github.com/alejandrozu/ulam-opdp-difficulty-atlas"
 url: "https://github.com/alejandrozu/ulam-opdp-difficulty-atlas"
 abstract: >-
-  Auditable Open Problem Difficulty Profiles for 8,785 problems, preserving
-  the 5,426-record UnsolvedMath v1.2.0 compatibility base and appending 3,359
-  AIM Workshop Problem Lists records from v1.5.0, prepared by Alejandro
-  Zarzuelo Urdiales with ChatGPT 5.6 Sol.
+  Auditable Open Problem Difficulty Profiles for 15,458 problems, preserving
+  all 8,785 records from the append-only v1.5 release and appending 6,673
+  Oberwolfach Reports Open Problems records from UnsolvedMath v1.6.0. The
+  three frozen cohorts contain 5,426 original records, 3,359 AIM Workshop
+  Problem Lists records, and 6,673 Oberwolfach records drawn from 1,106
+  distinct reports. Prepared by Alejandro Zarzuelo Urdiales with ChatGPT 5.6
+  Sol.
 keywords:
   - open problems
   - mathematics
@@ -21,3 +24,5 @@ keywords:
   - difficulty assessment
   - UnsolvedMath
   - OPDP
+  - Oberwolfach Reports
+  - source-aware analysis

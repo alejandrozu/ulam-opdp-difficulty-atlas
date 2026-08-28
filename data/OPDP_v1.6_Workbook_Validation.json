@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "workbook": "Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx",
+  "bytes": 8118257,
+  "sha256": "6BC3E4E36BC61F45DFB3C6B37C8D6C2F7AB73C40ED3EAEFA0D575AA9F33D43B6",
+  "sheets": 8,
+  "records": 15458,
+  "unique_ids": 15458,
+  "atlas_source_formula_id_alignment": true,
+  "formula_delta_nonzero": {
+    "D": 0,
+    "AI_D": 0,
+    "T": 0
+  },
+  "cached_formula_errors": 0,
+  "intentional_null_tractability": 627,
+  "valid_zero_tractability": 39,
+  "source_summary_rows": 1367,
+  "qa_rows": 9689
+}

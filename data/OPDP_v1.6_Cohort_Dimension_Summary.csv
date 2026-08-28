@@ -1,0 +1,61 @@
+﻿cohort_code,cohort_label,dimension,dimension_label,family,direction_semantics,n,mean,sd,min,p05,p25,median,p75,p95,max
+V0,Original v1.2 compatibility cohort,D,Intrinsic difficulty,intrinsic,burden,5426,5.7153888684113525,0.6187433421119471,3.4,4.9,5.4,5.6,5.9,6.9,9.6
+V0,Original v1.2 compatibility cohort,CG,Conceptual gap,intrinsic,burden,5426,2.4593623295245117,0.2978538885486151,1.0,2.0,2.5,2.5,2.5,3.0,4.0
+V0,Original v1.2 compatibility cohort,RG,Route gap,intrinsic,burden,5426,2.4043494286767415,0.2709795691733068,1.0,2.0,2.5,2.5,2.5,2.5,4.0
+V0,Original v1.2 compatibility cohort,TD,Technical depth,intrinsic,burden,5426,2.663287873203096,0.49230520381528053,1.5,2.0,2.5,2.5,3.0,3.5,4.0
+V0,Original v1.2 compatibility cohort,KB,Known barrier,intrinsic,burden,5426,1.2422594913380023,0.47495814002041176,0.5,1.0,1.0,1.0,1.5,2.0,4.0
+V0,Original v1.2 compatibility cohort,SS,Search scale,intrinsic,burden,5426,2.8438997419830447,0.3455532080937704,1.5,2.5,2.5,3.0,3.0,3.0,4.0
+V0,Original v1.2 compatibility cohort,AI_adj,AI-relative adjustment,protocol,burden,5426,-0.1690011057869517,0.850700550128869,-3.0,-1.0,-1.0,-0.5,0.5,1.5,2.5
+V0,Original v1.2 compatibility cohort,AI_D,AI difficulty,protocol,burden,5426,5.544047180243273,1.3448911849441332,0.4,3.8,4.6,5.4,6.4,8.1,10.0
+V0,Original v1.2 compatibility cohort,H,Human-effort prior,context,context,5426,1.860486546258754,1.5091358234884011,1.0,1.0,1.0,1.0,2.0,6.0,9.0
+V0,Original v1.2 compatibility cohort,X,Exposure,context,context,5426,1.488020641356432,0.7436020616684939,1.0,1.0,1.0,1.0,2.0,3.0,5.0
+V0,Original v1.2 compatibility cohort,T,100-hour tractability,protocol,favorable,5408,4.692862426035503,1.4921559584741866,0.0,2.0,4.0,5.0,6.0,7.0,10.0
+V0,Original v1.2 compatibility cohort,V_true,Verification if true,execution,burden,5426,5.48315517876889,1.206399249420634,1.9,2.9,5.0,5.7,6.4,6.9,9.0
+V0,Original v1.2 compatibility cohort,V_false,Verification if false,execution,burden,5426,5.2993180980464425,0.8276609066511886,2.6,4.3,4.6,5.3,5.7,6.7,9.0
+V0,Original v1.2 compatibility cohort,F,Formalization burden,execution,burden,5426,5.541909325469959,1.6257280436089592,2.2,3.2,4.0,5.8,6.8,7.8,10.0
+V0,Original v1.2 compatibility cohort,P,Prerequisite preparation,execution,burden,5426,6.565241430151124,0.9727536603047153,4.4,5.1,5.8,6.6,7.1,8.4,10.0
+V0,Original v1.2 compatibility cohort,B,Breadth,execution,burden,5426,1.8750460744563213,1.0779124079288984,1.0,1.0,1.0,1.0,3.0,4.0,5.0
+V0,Original v1.2 compatibility cohort,L,Tool leverage,execution,favorable,5426,4.864891264283082,1.1257294029362448,0.2,3.2,4.5,4.5,5.3,6.8,8.8
+V0,Original v1.2 compatibility cohort,ambiguity,Ambiguity,context,burden,5426,2.18046443051972,1.0596242469069856,0.8,0.8,1.6,2.3,2.3,4.3,9.5
+V0,Original v1.2 compatibility cohort,literature,Literature load,context,context,5426,2.782620715075562,1.0455568607300392,2.0,2.0,2.5,2.5,2.5,5.8,8.5
+V0,Original v1.2 compatibility cohort,collection_prior,Collection-barrier prior,context,context,5426,5.6762255805381505,0.9643997775068143,3.5,4.5,5.6,5.6,5.6,8.0,9.8
+V1,AIM v1.5 additions,D,Intrinsic difficulty,intrinsic,burden,3359,5.775349806490027,0.4504510888384969,3.6,5.1,5.5,5.8,6.1,6.4,8.1
+V1,AIM v1.5 additions,CG,Conceptual gap,intrinsic,burden,3359,2.407859481988687,0.2626958044368071,1.0,2.0,2.5,2.5,2.5,2.5,3.5
+V1,AIM v1.5 additions,RG,Route gap,intrinsic,burden,3359,2.1738612682345937,0.3023459099126635,1.0,2.0,2.0,2.0,2.5,2.5,3.5
+V1,AIM v1.5 additions,TD,Technical depth,intrinsic,burden,3359,2.869604048824055,0.4848467867343168,1.5,2.0,2.5,3.0,3.0,3.5,4.0
+V1,AIM v1.5 additions,KB,Known barrier,intrinsic,burden,3359,1.461446859184281,0.2912038680253708,1.0,1.0,1.5,1.5,1.5,2.0,2.5
+V1,AIM v1.5 additions,SS,Search scale,intrinsic,burden,3359,2.8655849955343853,0.3198615066054587,1.5,2.5,2.5,3.0,3.0,3.0,4.0
+V1,AIM v1.5 additions,AI_adj,AI-relative adjustment,protocol,burden,3359,-0.13694551949985115,0.6777553476042041,-3.0,-1.0,-0.5,-0.5,0.5,1.0,2.0
+V1,AIM v1.5 additions,AI_D,AI difficulty,protocol,burden,3359,5.638285203929741,1.021341146519781,0.6,4.1,4.9,5.6,6.4,7.1,10.0
+V1,AIM v1.5 additions,H,Human-effort prior,context,context,3359,1.844298898481691,0.50887546200093,1.0,1.0,2.0,2.0,2.0,2.0,9.0
+V1,AIM v1.5 additions,X,Exposure,context,context,3359,3.0014885382554333,0.05174891650994439,3.0,3.0,3.0,3.0,3.0,3.0,5.0
+V1,AIM v1.5 additions,T,100-hour tractability,protocol,favorable,2817,5.697195598154065,1.0184219084808608,1.0,4.0,5.0,6.0,6.0,7.0,10.0
+V1,AIM v1.5 additions,V_true,Verification if true,execution,burden,3359,5.6674903245013395,1.2154173815551612,2.0,3.1,5.2,5.8,6.5,7.1,9.0
+V1,AIM v1.5 additions,V_false,Verification if false,execution,burden,3359,5.518993748139328,0.795929975668072,2.8,4.5,5.0,5.4,5.9,6.9,9.0
+V1,AIM v1.5 additions,F,Formalization burden,execution,burden,3359,5.86883000893123,1.4355590583416025,2.4,3.7,4.8,6.0,7.0,7.9,10.0
+V1,AIM v1.5 additions,P,Prerequisite preparation,execution,burden,3359,7.0824947901161055,1.0555577257854751,4.4,5.6,6.3,7.0,7.9,8.9,10.0
+V1,AIM v1.5 additions,B,Breadth,execution,burden,3359,2.430782971122358,0.8579337618498545,1.0,1.0,2.0,2.0,3.0,4.0,5.0
+V1,AIM v1.5 additions,L,Tool leverage,execution,favorable,3359,4.803542721047931,1.119759695358018,0.2,3.2,4.5,4.5,5.3,6.8,8.8
+V1,AIM v1.5 additions,ambiguity,Ambiguity,context,burden,3359,1.9060434653170588,1.1607702303177998,0.8,0.8,1.5,1.5,2.2,3.5,8.7
+V1,AIM v1.5 additions,literature,Literature load,context,context,3359,2.063590354272105,0.27475534643627625,2.0,2.0,2.0,2.0,2.0,2.5,7.0
+V1,AIM v1.5 additions,collection_prior,Collection-barrier prior,context,context,3359,6.147305745757666,0.7010060661395698,4.8,4.8,6.0,6.0,6.0,8.0,8.0
+V2,Oberwolfach v1.6 additions,D,Intrinsic difficulty,intrinsic,burden,6673,5.831440131874719,0.537734369784882,3.4,4.9,5.5,5.9,6.1,6.8,8.1
+V2,Oberwolfach v1.6 additions,CG,Conceptual gap,intrinsic,burden,6673,2.4862130975573207,0.2984350682381807,1.0,2.0,2.5,2.5,2.5,3.0,4.0
+V2,Oberwolfach v1.6 additions,RG,Route gap,intrinsic,burden,6673,2.3129776712123484,0.29307968794879163,1.5,2.0,2.0,2.5,2.5,2.5,3.5
+V2,Oberwolfach v1.6 additions,TD,Technical depth,intrinsic,burden,6673,2.7244118087816576,0.49354242993718545,1.5,2.0,2.5,2.5,3.0,3.5,4.0
+V2,Oberwolfach v1.6 additions,KB,Known barrier,intrinsic,burden,6673,1.4579649333133524,0.4643235913145038,1.0,1.0,1.0,1.5,1.5,2.5,3.5
+V2,Oberwolfach v1.6 additions,SS,Search scale,intrinsic,burden,6673,2.858834107597782,0.3184291784529402,1.5,2.5,2.5,3.0,3.0,3.0,4.0
+V2,Oberwolfach v1.6 additions,AI_adj,AI-relative adjustment,protocol,burden,6673,-0.10040461561516559,0.7192673075865923,-3.0,-1.0,-0.5,0.0,0.5,1.5,2.5
+V2,Oberwolfach v1.6 additions,AI_D,AI difficulty,protocol,burden,6673,5.730256256556271,1.100536798237466,0.9,4.2,5.1,5.6,6.4,7.6,10.0
+V2,Oberwolfach v1.6 additions,H,Human-effort prior,context,context,6673,3.6051251311254306,0.7616505883817728,2.0,3.0,3.0,4.0,4.0,5.0,9.0
+V2,Oberwolfach v1.6 additions,X,Exposure,context,context,6673,3.0038962985164095,0.0881962673276459,3.0,3.0,3.0,3.0,3.0,3.0,5.0
+V2,Oberwolfach v1.6 additions,T,100-hour tractability,protocol,favorable,6606,5.316227671813503,1.1082513723210838,0.0,3.0,5.0,5.0,6.0,7.0,10.0
+V2,Oberwolfach v1.6 additions,V_true,Verification if true,execution,burden,6673,5.567241120935113,1.1298157590668991,1.9,3.0,5.2,5.7,6.1,7.0,9.0
+V2,Oberwolfach v1.6 additions,V_false,Verification if false,execution,burden,6673,5.333193466207104,0.7530093151232189,2.4,4.4,4.9,5.2,5.7,6.5,9.0
+V2,Oberwolfach v1.6 additions,F,Formalization burden,execution,burden,6673,5.598921025026226,1.3598226136796256,2.2,3.5,4.8,5.5,6.5,8.0,10.0
+V2,Oberwolfach v1.6 additions,P,Prerequisite preparation,execution,burden,6673,6.529731754832908,1.0917090821277309,4.4,5.0,5.7,6.4,7.1,8.5,10.0
+V2,Oberwolfach v1.6 additions,B,Breadth,execution,burden,6673,1.848344073130526,0.9384956105876787,1.0,1.0,1.0,2.0,2.0,4.0,5.0
+V2,Oberwolfach v1.6 additions,L,Tool leverage,execution,favorable,6673,4.814506219091863,1.1198353203855287,0.2,3.2,4.5,4.5,5.3,6.8,8.8
+V2,Oberwolfach v1.6 additions,ambiguity,Ambiguity,context,burden,6673,1.5273340326689644,1.0104901130893147,0.8,0.8,0.8,1.5,1.5,3.5,8.7
+V2,Oberwolfach v1.6 additions,literature,Literature load,context,context,6673,3.060737299565412,0.3215792985823238,2.5,2.8,2.8,3.0,3.3,3.5,7.3
+V2,Oberwolfach v1.6 additions,collection_prior,Collection-barrier prior,context,context,6673,6.0,0.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0
