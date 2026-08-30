@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/contrib/opdp-cert-sair-stage2/episode.schema.json",
+  "title": "OPDP-Cert route episode",
+  "type": "object",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {"accepted": {"const": true}},
+        "required": ["accepted"]
+      },
+      "then": {
+        "properties": {
+          "certificate_bytes": {"type": "integer", "exclusiveMinimum": 0},
+          "timed_out": {"const": false}
+        }
+      },
+      "else": {
+        "properties": {"failure_reason": {"type": "string", "minLength": 1}}
+      }
+    }
+  ],
+  "required": [
+    "problem_id",
+    "group_id",
+    "profile_id",
+    "route",
+    "time_limit_seconds",
+    "elapsed_seconds",
+    "accepted",
+    "timed_out",
+    "token_reservation",
+    "certificate_bytes",
+    "failure_reason",
+    "toolchain_commit",
+    "policy_version"
+  ],
+  "properties": {
+    "problem_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "group_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "profile_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "route": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "time_limit_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "elapsed_seconds": {"type": "number", "minimum": 0},
+    "accepted": {"type": "boolean"},
+    "timed_out": {"type": "boolean"},
+    "token_reservation": {"type": "integer", "minimum": 0},
+    "certificate_bytes": {"type": "integer", "minimum": 0},
+    "failure_reason": {"type": "string"},
+    "toolchain_commit": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "policy_version": {"type": "string", "minLength": 1, "pattern": "\\S"}
+  }
+}

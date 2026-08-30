@@ -1,0 +1,16 @@
+{
+  "base_euler_commit": "5524bd9949873d64ea9e121f0683b7158e3d6145",
+  "baseline_sort_matches": 1669,
+  "baseline_sort_mismatches": 0,
+  "diff_check_passed": true,
+  "headroom_under_500000_bytes": 54693,
+  "lf_utf8_bytes": 445307,
+  "lf_utf8_sha256": "1eafa01f7ffb9693721b288d884bc086c1feb6fc8b98370a6aac3c69cc0baf82",
+  "official_fixture_commit": "817a4653bf762584931d49c6714c9fcfab7df66a",
+  "patch_apply_check_passed": true,
+  "policy": "baseline",
+  "py_compile_python": "3.11.15",
+  "py_compile_passed": true,
+  "rows": 1669,
+  "working_tree_crlf_bytes": 450063
+}

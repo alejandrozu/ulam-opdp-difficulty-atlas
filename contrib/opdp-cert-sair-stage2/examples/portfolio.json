@@ -1,0 +1,36 @@
+{
+  "budgets": {
+    "source_bytes": 180,
+    "runtime_seconds": 40,
+    "tokens": 0
+  },
+  "cell_weights": {
+    "order5:unknown:given_clause": 3.0,
+    "order4:false:small_model": 1.0,
+    "collapse:true:direct": 2.0,
+    "hard:true:completion": 2.5
+  },
+  "candidates": [
+    {
+      "candidate_id": "magma-17",
+      "source_bytes": 64,
+      "runtime_seconds": 2,
+      "tokens": 0,
+      "covers": ["order4:false:small_model"]
+    },
+    {
+      "candidate_id": "collapse-template",
+      "source_bytes": 42,
+      "runtime_seconds": 1,
+      "tokens": 0,
+      "covers": ["collapse:true:direct"]
+    },
+    {
+      "candidate_id": "given-clause-v0",
+      "source_bytes": 96,
+      "runtime_seconds": 25,
+      "tokens": 0,
+      "covers": ["order5:unknown:given_clause", "hard:true:completion"]
+    }
+  ]
+}

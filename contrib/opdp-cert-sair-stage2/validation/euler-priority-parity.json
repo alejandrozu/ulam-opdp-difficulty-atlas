@@ -1,0 +1,43 @@
+{
+  "baseline_bucket_matches": 1669,
+  "baseline_bucket_mismatches": 0,
+  "default_policy": "baseline",
+  "elapsed_seconds": 0.159151,
+  "euler_commit": "5524bd9949873d64ea9e121f0683b7158e3d6145",
+  "id_text_mismatch_known": "unknown",
+  "interpretation": "Compatibility evidence only; no accepted-score claim.",
+  "official_commit": "817a4653bf762584931d49c6714c9fcfab7df66a",
+  "router_version": "0.1.0",
+  "sets": {
+    "hard1": {
+      "bucket_matches": 69,
+      "bucket_mismatches": [],
+      "input_mutations": 0,
+      "rows": 69,
+      "structural_position_changes": 65
+    },
+    "hard2": {
+      "bucket_matches": 200,
+      "bucket_mismatches": [],
+      "input_mutations": 0,
+      "rows": 200,
+      "structural_position_changes": 196
+    },
+    "hard3": {
+      "bucket_matches": 400,
+      "bucket_mismatches": [],
+      "input_mutations": 0,
+      "rows": 400,
+      "structural_position_changes": 391
+    },
+    "normal": {
+      "bucket_matches": 1000,
+      "bucket_mismatches": [],
+      "input_mutations": 0,
+      "rows": 1000,
+      "structural_position_changes": 993
+    }
+  },
+  "total_rows": 1669,
+  "validation_passed": true
+}

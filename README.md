@@ -28,6 +28,7 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 | [`OPDP_v1.6_APPEND_ONLY_NOTES.md`](docs/OPDP_v1.6_APPEND_ONLY_NOTES.md) | v1.6 compatibility contract, frozen snapshots, provenance rules, and validation evidence. |
 | [`OPDP_v1.6_SOURCE_AND_COHORT_COMPARISON.md`](docs/OPDP_v1.6_SOURCE_AND_COHORT_COMPARISON.md) | Rigorous comparison of the original, AIM, and Oberwolfach cohorts, both problem-weighted and source-aware. |
 | [`scripts/`](scripts/) | Reproducible source-analysis and workbook builders with usage instructions. |
+| [`contrib/opdp-cert-sair-stage2/`](contrib/opdp-cert-sair-stage2/) | Experimental, certificate-safe OPDP routing contribution for Christopher Brock's EULER SAIR Stage 2 solver, including a compact baseline patch, reproducible parity evidence, integration guide, and scoped MIT license. |
 | [`Ulam_UnsolvedMath_OPDP_Assessments_v1.5.json.gz`](data/Ulam_UnsolvedMath_OPDP_Assessments_v1.5.json.gz) | Historical 8,785-record append-only website-import payload. |
 | [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.5.xlsx`](data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.5.xlsx) | Expanded workbook with dashboard, atlas, formula audit, all rationales, statements, QA queue, and rubric. |
 | [`OPDP_v1.5_APPEND_ONLY_NOTES.md`](docs/OPDP_v1.5_APPEND_ONLY_NOTES.md) | Compatibility contract, source snapshots, new-record summary, and validation evidence. |
@@ -145,6 +146,19 @@ Append-only composite source snapshot SHA-256:
 ```text
 52F4D1C618ACC02256045F0B44EDEA2E059B2C90FF40F51F1F628B16C3E9FC0E
 ```
+
+## Experimental certificate routing contribution
+
+[`OPDP-Cert for SAIR Stage 2`](contrib/opdp-cert-sair-stage2/) is a separate,
+small contribution that applies OPDP-style profiling to the ordering and
+budgeting of existing proof and countermodel routes. Its immediate EULER patch
+defaults to exact legacy priority behavior plus ID/text fidelity; its structural
+policy and route planner are explicitly experimental. The router never supplies
+a verdict or bypasses certificate validation.
+
+Only that contribution directory is available under its scoped MIT license. Its
+released-set validation is compatibility evidence, not a competition-score
+claim or a relicensing of this atlas.
 
 ## Interpretation and limitations
 
