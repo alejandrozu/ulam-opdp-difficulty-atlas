@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "validator": "validate_v1_7_mathdb_expansion.py",
+  "streaming": true,
+  "input": "data/Ulam_MathDB_OPDP_Assessments_v1.7.json.gz",
+  "base": "data/Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz",
+  "snapshot": "mathdb_problem_summaries.jsonl",
+  "sitemap_inventory": "mathdb_sitemap_inventory.jsonl",
+  "mathdb_id_mapping": "problem_id = 40000000 + problem.number",
+  "snapshot_sha256": "322a1d077168ec03cbe5b9002a84e0b33591bdc6c5eeae8af38bb1ad272ed4cb",
+  "sitemap_inventory_sha256": "619c9339b749e573219f25b0caf5d03c187daf56e571e830195981e2dba65625",
+  "expected_records": 102563,
+  "expected_base_records": 15458,
+  "expected_mathdb_records": 87105,
+  "observed": {
+    "final_records": 102563,
+    "base_records_compared": 15458,
+    "base_record_mismatches": 0,
+    "snapshot_rows": 87105,
+    "sitemap_inventory_rows": 87105,
+    "unique_new_problem_ids_seen": 87105,
+    "unique_snapshot_numbers_seen": 87105,
+    "unique_snapshot_source_ids_seen": 87105,
+    "unique_inventory_numbers_seen": 87105,
+    "snapshot_inventory_mapping_matches": 87105,
+    "id_projection_matches": 87105,
+    "exact_source_record_matches": 87105,
+    "exact_snapshot_metadata_matches": 87105
+  },
+  "bounded_memory_evidence": {
+    "maximum_final_parser_buffer_characters": 1104170,
+    "maximum_base_parser_buffer_characters": 1099627,
+    "final_payload_or_records_array_materialized": false
+  },
+  "checks": {
+    "strict_gzip_utf8_json": true,
+    "duplicate_json_keys": "strictly rejected in payload, base, manifest, snapshot JSONL, and inventory JSONL",
+    "ascending_unique_problem_ids": true,
+    "base_prefix_deep_equality": true,
+    "mathdb_id_projection": true,
+    "mathdb_snapshot_mapping_coverage": true,
+    "record_schema_enums_ranges_and_formulas": "validated for every decoded record",
+    "ten_rationale_fields": "validated for every decoded record",
+    "summary_recomputed": true
+  },
+  "error_count": 0,
+  "error_examples": [],
+  "error_examples_truncated": false
+}

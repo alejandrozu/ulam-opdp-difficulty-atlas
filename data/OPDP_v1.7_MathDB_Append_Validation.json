@@ -1,0 +1,35 @@
+{
+  "validation_schema_version": "1.0.0",
+  "release_version": "1.7.0",
+  "rule_version": "OPDP-1.0-rulepass-2026-07-31",
+  "status": "pass",
+  "errors": [],
+  "warnings": [],
+  "inputs": {
+    "base_export_id": "unsolvedmath-v1.6.0__opdp-1.0-rulepass-2026-07-31",
+    "base_count": 15458,
+    "mathdb_count": 87105,
+    "mathdb_summary_excerpt_count": 87105,
+    "mathdb_sha256": "322A1D077168EC03CBE5B9002A84E0B33591BDC6C5EEAE8AF38BB1AD272ED4CB"
+  },
+  "outputs": {
+    "records_total": 102563,
+    "additions": 87105,
+    "first_mathdb_id": 40000001,
+    "last_mathdb_id": 40405270,
+    "output_path": "data/Ulam_MathDB_OPDP_Assessments_v1.7.json.gz",
+    "output_sha256": "674BA2344AF67C152AA44465E7D5A86E63E006179120B1E1465D31A9576F10AE",
+    "output_bytes": 61844099
+  },
+  "checks": {
+    "legacy_deep_digest_unchanged": true,
+    "unique_problem_ids": true,
+    "complete_ten_rationales": true,
+    "lossless_mathdb_source_records": true,
+    "formulas_recomputed": true,
+    "engagement_excluded": true,
+    "stable_reversible_mathdb_ids": true,
+    "excerpt_limitations_and_c0_caps": true,
+    "streamed_mathdb_record_cache": true
+  }
+}

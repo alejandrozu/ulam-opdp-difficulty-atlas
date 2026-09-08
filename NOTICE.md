@@ -1,6 +1,26 @@
 # Attribution and provenance notice
 
-## Source corpus
+## Source corpora
+
+The current append-only OPDP release contains 102,563 records: the complete 15,458-record UnsolvedMath v1.6 compatibility base plus 87,105 exact MathDB public-catalog items frozen on 2026-09-08.
+
+### MathDB public-catalog expansion
+
+- Website: https://mathdb.com
+- Terms: https://mathdb.com/terms
+- Frozen public inventory: 87,105 unique problem numbers across five problem sitemaps
+- Public catalog file: `mathdb_problem_summaries.jsonl`
+- Envelope schema: `opdp.mathdb.problem-summary.v1`
+- Combined OPDP v1.7 record count: 102,563
+- Declared database-content license: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+For each appended record, `source_record` is deep-equal to the exact public-list `problem` item captured by the catalog acquirer. That list item supplies `excerpt`, not a statement guaranteed to be complete. OPDP therefore stores the excerpt with `source_text.text_mode = "mathdb_public_list_excerpt"`, marks `source_excerpt_only`, assigns C0 to every excerpt-derived confidence field, widens its uncertainty ranges, and repeats the limitation in all ten rationales. Neither this notice nor the release represents those excerpts as 87,105 complete mathematical statements.
+
+MathDB's richer per-problem endpoint enforces a limit of 500 unique problems per day, and its Terms direct bulk-data users to contact the administrators. This project did not evade the limit by rotating accounts, credentials, network addresses, or hosts. It froze the exact sitemap inventory, retrieved only a permitted diagnostic detail sample, and used the supported public catalog list surface for complete coverage. The catalog manifest retains page hashes, retrieval times, release headers, and exact sitemap joins; final artifact hashes are recorded in `CHECKSUMS.sha256` and the v1.7 append-only notes.
+
+MathDB attribution does not supersede terms attached to separately cited underlying material. Reusers should retain MathDB attribution, the available per-item source fields, the excerpt limitation, and any third-party citation or rights notice.
+
+### UnsolvedMath v1.6 compatibility corpus
 
 This project analyzes three frozen, append-only cohorts from the **UnsolvedMath** corpus published by Ulam AI: 5,426 original compatibility-base records, 3,359 AIM Workshop Problem Lists additions, and 6,673 Oberwolfach Reports Open Problems additions.
 
@@ -32,9 +52,11 @@ The 2026-08-18 expansion preserves all 5,426 legacy OPDP records exactly and app
 
 The 2026-08-26 expansion preserves all 8,785 OPDP v1.5 records exactly and appends OPDP classifications for 6,673 records from UnsolvedMath v1.6.0's Oberwolfach Reports Open Problems collection. Those records resolve to 1,106 distinct report sources. Their Ulam L3 labels are collection defaults rather than independent expert rankings for each problem; all OPDP classifications remain provisional and require expert review.
 
+The 2026-09-08 v1.7 expansion preserves all 15,458 OPDP v1.6 records exactly and appends provisional classifications for 87,105 MathDB public-list items. Each classification uses only the source's incomplete `excerpt`; it is flagged `source_excerpt_only`, capped at C0 confidence, and requires recalibration before use as a statement-complete difficulty assessment. No full-detail corpus, independent status audit, source-provenance study, or cross-dataset comparison is asserted for this expansion.
+
 The 2026-08-04 ChatGPT 5.6 Sol Ultra companion derives a model-specific 0–1000 full-solution difficulty estimate from those OPDP inputs. Its scores and rationales were also prepared by **Alejandro Zarzuelo Urdiales with ChatGPT 5.6 Sol Ultra**. No problem was empirically attempted; the scores are ordinal editorial estimates under the protocol stated in the rationale file, not probabilities or claims of solvability.
 
 ## Rights
 
-Public visibility of this repository does not, by itself, grant additional rights over original analysis or third-party source material. Reusers remain responsible for complying with the UnsolvedMath dataset license, preserving attribution to both Ulam and the identified natural source, and respecting any per-record rights notices or underlying-source restrictions.
+Public visibility of this repository does not, by itself, grant additional rights over original analysis or third-party source material. Reusers remain responsible for complying with the UnsolvedMath and MathDB dataset terms, preserving attribution to the applicable dataset and available cited source, retaining the MathDB excerpt limitation, and respecting any per-record rights notices or underlying-source restrictions.
 
