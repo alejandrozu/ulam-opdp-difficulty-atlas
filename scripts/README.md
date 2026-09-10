@@ -12,6 +12,8 @@ payload. It supplies:
   declared arXiv source leads;
 - `acquire_arxiv_metadata.py` — dry-run-by-default, resumable metadata-only
   acquisition from the official arXiv API (never a full-text fetch);
+- `validate_arxiv_metadata_acquisition.py` — read-only integrity audit of
+  immutable metadata request plans and response envelopes;
 - `capture_collection_source_evidence.py` and
   `build_collection_source_inventory.py` — hash-only collection evidence and
   frozen-Ulam overlap pointers;

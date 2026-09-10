@@ -55,6 +55,14 @@ source, PDF, e-print, or HTML body is requested.  Errors are appended to a
 separate ledger and a derived metadata index can be safely regenerated from
 the immutable envelopes on resume.
 
+`validate_arxiv_metadata_acquisition.py` is a separate read-only audit.  It
+verifies the immutable plan hash and source binding, exact `id_list` plus
+`max_results` request construction, response-envelope hashes and Atom parsing,
+batch/ID coverage, metadata-only scope flags, and the append-only error
+ledger.  It deliberately does not validate or rewrite the replaceable index
+and summary files.  Run it only after the writer exits or against a quiescent
+copy, since an append-only ledger can be observed in the middle of a write.
+
 The handoff to S3 is intentionally limited: the API layer supplies canonical
 IDs, observed/requested versions, and non-authoritative license hints to map
 against `src/arXiv_src_manifest.xml`.  It does **not** choose a source tar,

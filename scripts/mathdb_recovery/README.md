@@ -138,7 +138,34 @@ one archive at a time, and create exact passage locators.  Metadata title or
 abstract agreement alone may not create a `source_matched`,
 `recovery_outcome`, openness, or OPDP-rescore event.
 
-## 4. Acquire source material through an approved route
+## 4. Read-only validate the metadata acquisition
+
+`validate_arxiv_metadata_acquisition.py` independently audits the immutable
+plan and every completed response envelope.  It checks the frozen-manifest
+binding; the exact official request URL, including `max_results`; batch and ID
+coverage; response-body and parsed-metadata hashes; exact Atom-to-parsed-data
+reconstruction; metadata-only content declarations; and append-only
+error-ledger bindings.  It does **not** write a report, repair an output, or
+touch v1.7.  Its only output is JSON on stdout.
+
+Run it after the acquisition writer exits (or against a copied/quiescent
+snapshot), because the append-only error ledger can otherwise be observed
+mid-append:
+
+```powershell
+& $py scripts/mathdb_recovery/validate_arxiv_metadata_acquisition.py `
+  --run-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08 `
+  --source-manifest scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_source_manifest-final\arxiv_source_manifest.json `
+  --metadata-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_metadata_api-v2
+```
+
+The status can be `valid_incomplete`: this means the current immutable
+evidence is internally sound but not all planned batches have a response yet.
+Only `valid_complete` means every planned metadata batch has an audited
+envelope.  A nonzero process exit indicates an integrity finding, not merely
+an incomplete resumable pass.
+
+## 5. Acquire source material through an approved route
 
 Register acquisition evidence as an append-only event before a matching or
 reconstruction event.  For arXiv, use a documented approved bulk channel
@@ -164,7 +191,7 @@ an assertion that upstream prose may be redistributed.  Keep authorized TeX,
 PDF, and any verbatim quotations in local, access-controlled asset storage and
 record only their hashes/locators in the ledger.
 
-## 5. Append a recovery event
+## 6. Append a recovery event
 
 Create one JSON object conforming to `schema/recovery-event.schema.json`, then
 append it through the guarded writer.  The writer checks the task key and
@@ -181,7 +208,7 @@ The ledger never overwrites an earlier conclusion.  Corrections and
 supersessions are new events referring to `supersedes_event_id`; consumers use
 the latest valid event of each type only after validation.
 
-## 6. Validate before using any recovery for scoring
+## 7. Validate before using any recovery for scoring
 
 ```powershell
 & $py scripts/mathdb_recovery/validate_recovery_run.py `
