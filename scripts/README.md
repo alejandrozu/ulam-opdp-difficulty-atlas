@@ -14,6 +14,8 @@ payload. It supplies:
   acquisition from the official arXiv API (never a full-text fetch);
 - `validate_arxiv_metadata_acquisition.py` — read-only integrity audit of
   immutable metadata request plans and response envelopes;
+- `summarize_arxiv_metadata_acquisition.py` — content-free, stable-snapshot
+  public aggregate exporter, gated on a clean completed acquisition;
 - `capture_collection_source_evidence.py` and
   `build_collection_source_inventory.py` — hash-only collection evidence and
   frozen-Ulam overlap pointers;

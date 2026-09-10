@@ -165,7 +165,40 @@ Only `valid_complete` means every planned metadata batch has an audited
 envelope.  A nonzero process exit indicates an integrity finding, not merely
 an incomplete resumable pass.
 
-## 5. Acquire source material through an approved route
+## 5. Emit a content-free public acquisition summary (only after completion)
+
+`summarize_arxiv_metadata_acquisition.py` is a separate, read-only public
+exporter.  It does **not** copy the replaceable metadata index or summary. It
+re-reads only immutable request-plan/response evidence, uses the independent
+validator, and emits fixed aggregate counts and SHA-256 bindings.  It never
+emits an arXiv ID, request URL, response path, title, abstract, author name,
+Atom/XML byte, error message, source passage, or mathematical statement.
+
+Before publishing, it requires a stable quiescent snapshot: the acquisition
+lock must be absent both before and after the audit, and a digest covering the
+recovery run, source manifest, metadata run, request plan, error ledger, and
+all response envelopes must remain unchanged.  A validator warning (including
+an unterminated ledger line), integrity error, live/stale lock, or changing
+snapshot blocks publication.  `valid_incomplete` can be inspected only with
+the explicit stdout-preview flag; it cannot write an artifact.
+
+After the full worker has exited with a clean `valid_complete` audit, produce
+the versioned public evidence artifact outside the ignored recovery run:
+
+```powershell
+& $py scripts/mathdb_recovery/summarize_arxiv_metadata_acquisition.py `
+  --run-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08 `
+  --source-manifest scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_source_manifest-final\arxiv_source_manifest.json `
+  --metadata-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_metadata_api-v2 `
+  --output data\ARXIV_METADATA_ACQUISITION_EVIDENCE_v1.json
+```
+
+The command refuses to overwrite a different file and refuses `--output`
+unless its own stable-snapshot gate reaches `verified_complete`.  It is an
+acquisition-coverage report only: it neither reconstructs problem statements,
+checks whether a result remains open, nor recalculates an OPDP field.
+
+## 6. Acquire source material through an approved route
 
 Register acquisition evidence as an append-only event before a matching or
 reconstruction event.  For arXiv, use a documented approved bulk channel
@@ -191,7 +224,7 @@ an assertion that upstream prose may be redistributed.  Keep authorized TeX,
 PDF, and any verbatim quotations in local, access-controlled asset storage and
 record only their hashes/locators in the ledger.
 
-## 6. Append a recovery event
+## 7. Append a recovery event
 
 Create one JSON object conforming to `schema/recovery-event.schema.json`, then
 append it through the guarded writer.  The writer checks the task key and
@@ -208,7 +241,7 @@ The ledger never overwrites an earlier conclusion.  Corrections and
 supersessions are new events referring to `supersedes_event_id`; consumers use
 the latest valid event of each type only after validation.
 
-## 7. Validate before using any recovery for scoring
+## 8. Validate before using any recovery for scoring
 
 ```powershell
 & $py scripts/mathdb_recovery/validate_recovery_run.py `
