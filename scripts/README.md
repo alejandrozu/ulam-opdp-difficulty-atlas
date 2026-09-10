@@ -10,6 +10,8 @@ payload. It supplies:
 - `bootstrap_mathdb_recovery.py` — deterministic canonical task shards;
 - `build_arxiv_source_manifest.py` — read-only normalization/deduplication of
   declared arXiv source leads;
+- `acquire_arxiv_metadata.py` — dry-run-by-default, resumable metadata-only
+  acquisition from the official arXiv API (never a full-text fetch);
 - `capture_collection_source_evidence.py` and
   `build_collection_source_inventory.py` — hash-only collection evidence and
   frozen-Ulam overlap pointers;
@@ -22,7 +24,9 @@ See [`../docs/MATHDB_STATEMENT_RECOVERY_PROTOCOL.md`](../docs/MATHDB_STATEMENT_R
 [`../docs/MATHDB_COLLECTION_RECOVERY_INVENTORY.md`](../docs/MATHDB_COLLECTION_RECOVERY_INVENTORY.md),
 and [`../docs/ARXIV_BULK_RECOVERY_DECISION_NOTE.md`](../docs/ARXIV_BULK_RECOVERY_DECISION_NOTE.md).
 The arXiv full-source stage requires an authorized bulk-data route; it is not
-implicitly triggered by any release builder.
+implicitly triggered by any release builder.  The separate metadata worker
+only builds immutable, rate-limited API evidence to inform a later S3 mapping;
+it does not alter v1.7 or recover a mathematical statement on its own.
 
 ## v1.7 MathDB append-only expansion (current)
 

@@ -75,7 +75,70 @@ This produces `arxiv_sources.jsonl`, `arxiv_targets.jsonl`, and an immutable
 `arxiv_source_manifest.json`.  The target file deliberately contains no paper
 text; it binds each acquisition target to a `task_key` and task hash.
 
-## 3. Acquire source material through an approved route
+## 3. Acquire arXiv metadata first (no paper text)
+
+The source manifest records 42,371 normalized arXiv identifiers in its final
+revision.  Before any source archive is considered, acquire a small,
+auditable metadata layer with `acquire_arxiv_metadata.py`.  This worker uses
+only the official HTTPS legacy API endpoint
+`https://export.arxiv.org/api/query?id_list=...&max_results=...`; it never requests `/pdf/`,
+`/src/`, `/e-print/`, HTML, or any other full-text endpoint.
+
+The default is a **dry run with no network access**.  It writes an immutable
+request plan with at most 50 IDs per request, an explicit `max_results` equal
+to each batch's size (the API otherwise defaults to ten results), exact request URLs, and the
+frozen-manifest hashes.  Run the two-ID smoke plan first:
+
+```powershell
+& $py scripts/mathdb_recovery/acquire_arxiv_metadata.py `
+  --run-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08 `
+  --source-manifest scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_source_manifest-final\arxiv_source_manifest.json `
+  --output-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_metadata_api-smoke-2 `
+  --max-ids 2
+
+& $py scripts/mathdb_recovery/acquire_arxiv_metadata.py `
+  --run-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08 `
+  --source-manifest scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_source_manifest-final\arxiv_source_manifest.json `
+  --output-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_metadata_api-smoke-2 `
+  --max-ids 2 --resume --allow-network --max-retries 0
+```
+
+When an approved full metadata pass is desired, it requires both explicit
+flags below.  The worker is single-threaded, uses `Connection: close`, accepts
+no redirects, retains a single active request, and enforces at least three
+seconds between request starts.  Thus the 848 batches have a rate-limit lower
+bound of roughly 42 minutes; do not use a parallel wrapper around this command.
+
+```powershell
+& $py scripts/mathdb_recovery/acquire_arxiv_metadata.py `
+  --run-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08 `
+  --source-manifest scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_source_manifest-final\arxiv_source_manifest.json `
+  --output-dir scripts\mathdb_recovery\runs\mathdb-2026-09-08\arxiv_metadata_api `
+  --resume --allow-network --allow-full-run
+```
+
+`--resume` verifies every existing response envelope rather than overwriting
+it.  Successful batches are immutable `responses/*.json` envelopes containing
+the exact base64-encoded Atom XML bytes, their SHA-256 hashes, request URL,
+parsed title/abstract/categories/authors, returned version, and any
+license/withdrawal fields the API exposes.  `error_ledger.jsonl` is append
+only.  `derived_metadata_records.jsonl` is deliberately replaceable: it is a
+convenience index regenerated from the immutable response envelopes.
+
+The legacy API often omits a license and does not offer a complete version or
+withdrawal history.  The worker represents those absences explicitly rather
+than inferring a license or a current open/closed status.  A word such as
+“withdrawn” is only recorded as a non-decisive text marker.
+
+This metadata layer is an input to—not a substitute for—the later authorized
+S3 source-extraction phase.  That stage must map canonical IDs and returned
+versions to `src/arXiv_src_manifest.xml`, obtain a human-approved
+Requester-Pays budget, verify the source-archive checksum and rights, stream
+one archive at a time, and create exact passage locators.  Metadata title or
+abstract agreement alone may not create a `source_matched`,
+`recovery_outcome`, openness, or OPDP-rescore event.
+
+## 4. Acquire source material through an approved route
 
 Register acquisition evidence as an append-only event before a matching or
 reconstruction event.  For arXiv, use a documented approved bulk channel
@@ -101,7 +164,7 @@ an assertion that upstream prose may be redistributed.  Keep authorized TeX,
 PDF, and any verbatim quotations in local, access-controlled asset storage and
 record only their hashes/locators in the ledger.
 
-## 4. Append a recovery event
+## 5. Append a recovery event
 
 Create one JSON object conforming to `schema/recovery-event.schema.json`, then
 append it through the guarded writer.  The writer checks the task key and
@@ -118,7 +181,7 @@ The ledger never overwrites an earlier conclusion.  Corrections and
 supersessions are new events referring to `supersedes_event_id`; consumers use
 the latest valid event of each type only after validation.
 
-## 5. Validate before using any recovery for scoring
+## 6. Validate before using any recovery for scoring
 
 ```powershell
 & $py scripts/mathdb_recovery/validate_recovery_run.py `
