@@ -1,0 +1,5 @@
+# Local source assets, run state, and generated ledgers are intentionally not release artifacts.
+runs/
+raw/
+*.sqlite
+*.sqlite-journal

@@ -1,0 +1,6 @@
+{
+  "exact_source": "exact_source",
+  "faithful_normalization": "faithful_normalization",
+  "contextual_reconstruction": "contextual_reconstruction",
+  "unresolved": "unresolved"
+}

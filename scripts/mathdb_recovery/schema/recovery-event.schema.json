@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/schema/opdp.mathdb.recovery-event.v1.json",
+  "title": "OPDP MathDB append-only recovery event v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "event_id",
+    "occurred_at_utc",
+    "task_key",
+    "task_content_sha256",
+    "event_type",
+    "actor",
+    "payload"
+  ],
+  "properties": {
+    "schema": {"const": "opdp.mathdb.recovery-event.v1"},
+    "event_id": {"type": "string", "format": "uuid"},
+    "occurred_at_utc": {"type": "string", "format": "date-time"},
+    "task_key": {"type": "string", "pattern": "^mathdb:[1-9][0-9]*$"},
+    "task_content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "event_type": {
+      "enum": [
+        "source_asset_registered",
+        "source_matched",
+        "recovery_outcome",
+        "openness_check",
+        "rescore_decision",
+        "manual_review"
+      ]
+    },
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id"],
+      "properties": {
+        "kind": {"enum": ["human", "agent", "pipeline"]},
+        "id": {"type": "string", "minLength": 1}
+      }
+    },
+    "supersedes_event_id": {"type": "string", "format": "uuid"},
+    "payload": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"event_type": {"const": "recovery_outcome"}}},
+      "then": {"properties": {"payload": {"$ref": "#/$defs/recoveryOutcomePayload"}}}
+    }
+  ],
+  "$defs": {
+    "recoveryClassification": {
+      "enum": ["exact_source", "faithful_normalization", "contextual_reconstruction", "unresolved"]
+    },
+    "publishableStatement": {
+      "description": "A release-eligible mathematical restatement. It is intentionally separate from source quotations and may not be treated as a redistributable copy of an upstream paper.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "statement_sha256", "representation", "self_contained"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "statement_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "representation": {"enum": ["faithful_restatement", "normalized_notation", "contextual_reconstruction"]},
+        "self_contained": {"type": "boolean"}
+      }
+    },
+    "sourceLocator": {
+      "description": "Local audit evidence only. The locator/digests permit reproduction against an authorized local artifact without publishing a verbatim source quotation.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_url", "asset_id", "locator_type", "locator", "source_sha256", "quote_sha256"],
+      "properties": {
+        "source_url": {"type": "string", "format": "uri"},
+        "asset_id": {"type": "string", "minLength": 1},
+        "source_version": {"type": ["string", "null"]},
+        "locator_type": {"enum": ["theorem_label", "conjecture_label", "question_label", "section", "page", "page_range", "line_range", "anchor", "other"]},
+        "locator": {"type": "string", "minLength": 1},
+        "source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "quote_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "locator_scheme": {"type": "string", "minLength": 1},
+        "line_start": {"type": "integer", "minimum": 1},
+        "line_end": {"type": "integer", "minimum": 1},
+        "byte_start": {"type": "integer", "minimum": 0},
+        "byte_end_exclusive": {"type": "integer", "minimum": 1}
+      }
+    },
+    "localEvidence": {
+      "description": "Non-publishable matching and passage evidence. It contains locators and digests, never source_quote or verbatim_source_text.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_locators", "method", "confidence"],
+      "properties": {
+        "source_locators": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sourceLocator"}},
+        "method": {"type": "string", "minLength": 1},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "supporting_event_ids": {"type": "array", "items": {"type": "string", "format": "uuid"}},
+        "transformation_ledger": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "recoveryOutcomePayload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "limitations"],
+      "properties": {
+        "classification": {"$ref": "#/$defs/recoveryClassification"},
+        "publishable_statement": {"$ref": "#/$defs/publishableStatement"},
+        "local_evidence": {"$ref": "#/$defs/localEvidence"},
+        "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"classification": {"const": "unresolved"}}},
+          "then": {"not": {"anyOf": [{"required": ["publishable_statement"]}, {"required": ["local_evidence"]}]}},
+          "else": {"required": ["publishable_statement", "local_evidence"]}
+        }
+      ]
+    }
+  }
+}

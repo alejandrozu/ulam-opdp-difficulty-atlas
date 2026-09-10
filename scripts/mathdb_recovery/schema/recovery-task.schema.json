@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/schema/opdp.mathdb.recovery-task.v1.json",
+  "title": "OPDP MathDB canonical recovery task v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "task_key",
+    "task_content_sha256",
+    "mathdb",
+    "canonical_source",
+    "source_leads",
+    "recovery_policy"
+  ],
+  "properties": {
+    "schema": {"const": "opdp.mathdb.recovery-task.v1"},
+    "task_key": {"type": "string", "pattern": "^mathdb:[1-9][0-9]*$"},
+    "task_content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "mathdb": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["number", "uuid", "title", "excerpt", "native_status", "problem_url"],
+      "properties": {
+        "number": {"type": "integer", "minimum": 1},
+        "uuid": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "excerpt": {"type": "string", "minLength": 1},
+        "native_status": {"type": ["string", "null"]},
+        "problem_url": {"type": "string", "format": "uri"},
+        "tags": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "canonical_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalog_envelope_schema",
+        "snapshot_line",
+        "source_record_sha256",
+        "source_envelope_sha256",
+        "snapshot"
+      ],
+      "properties": {
+        "catalog_envelope_schema": {"const": "opdp.mathdb.problem-summary.v1"},
+        "snapshot_line": {"type": "integer", "minimum": 1},
+        "source_record_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "source_envelope_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "snapshot": {"type": "object"}
+      }
+    },
+    "source_leads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "url", "route"],
+        "properties": {
+          "field": {"type": "string", "minLength": 1},
+          "url": {"type": "string", "format": "uri"},
+          "route": {"enum": ["arxiv_bulk", "collection_native", "direct_source", "manual_provenance"]}
+        }
+      }
+    },
+    "recovery_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["initial_classification", "automatic_rescore_allowed"],
+      "properties": {
+        "initial_classification": {"const": "unresolved"},
+        "automatic_rescore_allowed": {"const": false}
+      }
+    }
+  }
+}

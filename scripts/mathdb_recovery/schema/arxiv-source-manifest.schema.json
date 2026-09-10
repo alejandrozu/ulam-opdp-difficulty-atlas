@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/schema/opdp.mathdb.arxiv-source-manifest.v1.json",
+  "title": "OPDP MathDB deduplicated arXiv source manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "source", "normalization", "outputs", "summary"],
+  "properties": {
+    "schema": {"const": "opdp.mathdb.arxiv-source-manifest.v1"},
+    "source": {"type": "object"},
+    "normalization": {"type": "object"},
+    "outputs": {"type": "object"},
+    "summary": {
+      "type": "object",
+      "required": ["unique_arxiv_sources", "source_to_task_lead_rows"],
+      "properties": {
+        "unique_arxiv_sources": {"type": "integer", "minimum": 0},
+        "source_to_task_lead_rows": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "opdp.mathdb.problem-summary.v1",
+  "snapshot": {
+    "inventory_url": "https://mathdb.com/p/900001",
+    "retrieved_at": "2026-09-10T00:00:00Z"
+  },
+  "problem": {
+    "id": "fixture-exact-source",
+    "number": 900001,
+    "title": "Synthetic Problem — Odd covering systems",
+    "excerpt": "Is there a covering system all of whose moduli are odd?",
+    "status": "open",
+    "tags": ["number-theory"],
+    "documented_by_source_url": "https://fixtures.opdp.example/exact-source.tex"
+  }
+}

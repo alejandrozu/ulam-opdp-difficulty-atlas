@@ -1,5 +1,29 @@
 # Release builders and validators
 
+## MathDB statement recovery (separate, append-only workstream)
+
+`mathdb_recovery/` is deliberately separate from the v1.7 builder. It binds
+all recovery work to the frozen 87,105-record public catalog, preserves an
+append-only outcome ledger, and never rewrites the excerpt-derived v1.7
+payload. It supplies:
+
+- `bootstrap_mathdb_recovery.py` — deterministic canonical task shards;
+- `build_arxiv_source_manifest.py` — read-only normalization/deduplication of
+  declared arXiv source leads;
+- `capture_collection_source_evidence.py` and
+  `build_collection_source_inventory.py` — hash-only collection evidence and
+  frozen-Ulam overlap pointers;
+- `append_recovery_event.py` and `validate_recovery_run.py` — guarded ledger
+  writes and rescore-gate validation; and
+- `prototype_mathdb_statement_recovery.mjs` — fixture-tested local candidate
+  extraction and label assignment for an already-authorized source artifact.
+
+See [`../docs/MATHDB_STATEMENT_RECOVERY_PROTOCOL.md`](../docs/MATHDB_STATEMENT_RECOVERY_PROTOCOL.md),
+[`../docs/MATHDB_COLLECTION_RECOVERY_INVENTORY.md`](../docs/MATHDB_COLLECTION_RECOVERY_INVENTORY.md),
+and [`../docs/ARXIV_BULK_RECOVERY_DECISION_NOTE.md`](../docs/ARXIV_BULK_RECOVERY_DECISION_NOTE.md).
+The arXiv full-source stage requires an authorized bulk-data route; it is not
+implicitly triggered by any release builder.
+
 ## v1.7 MathDB append-only expansion (current)
 
 The v1.7 pipeline freezes the exact 87,105-item MathDB inventory, captures the corresponding public catalog list items, and appends them to the 15,458-record v1.6 OPDP base. The complete release contains 102,563 records. It is JSON-only: no 102,563-row workbook is generated.

@@ -1,0 +1,4 @@
+## A different question
+
+Question. Does every finite group have a generating set whose Cayley graph is
+an expander?

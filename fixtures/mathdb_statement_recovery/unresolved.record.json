@@ -1,0 +1,16 @@
+{
+  "schema": "opdp.mathdb.problem-summary.v1",
+  "snapshot": {
+    "inventory_url": "https://mathdb.com/p/900004",
+    "retrieved_at": "2026-09-10T00:00:00Z"
+  },
+  "problem": {
+    "id": "fixture-unresolved",
+    "number": 900004,
+    "title": "Synthetic Problem — Prime gaps with a logarithmic lower bound",
+    "excerpt": "Are there infinitely many consecutive primes whose gap exceeds the square of the logarithm of the smaller prime?",
+    "status": "open",
+    "tags": ["number-theory"],
+    "documented_by_source_url": "https://fixtures.opdp.example/unresolved.txt"
+  }
+}

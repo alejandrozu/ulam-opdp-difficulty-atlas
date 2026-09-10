@@ -18,6 +18,12 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 | [`OPDP_v1.7_MathDB_Append_Validation.json`](data/OPDP_v1.7_MathDB_Append_Validation.json) | Builder validation of append-only equality, IDs, source-item preservation, formulas, C0 excerpt controls, rationales, and summary counts. |
 | [`OPDP_v1.7_Independent_Validation.json`](data/OPDP_v1.7_Independent_Validation.json) | Independent streaming validation against the frozen sitemap inventory and MathDB catalog manifest. |
 | [`OPDP_v1.7_APPEND_ONLY_NOTES.md`](docs/OPDP_v1.7_APPEND_ONLY_NOTES.md) | v1.7 acquisition, text-coverage, compatibility, attribution, and validation contract. |
+| [`MATHDB_COLLECTION_RECOVERY_INVENTORY.md`](docs/MATHDB_COLLECTION_RECOVERY_INVENTORY.md) | Audited Phase-1 inventory for the five named collection candidates, with source-count discrepancies and explicit non-membership caveats. |
+| [`MATHDB_STATEMENT_RECOVERY_PROTOCOL.md`](docs/MATHDB_STATEMENT_RECOVERY_PROTOCOL.md) | Record-level statement-recovery labels, locator requirements, open-status gate, and rescoring contract. |
+| [`ARXIV_BULK_RECOVERY_DECISION_NOTE.md`](docs/ARXIV_BULK_RECOVERY_DECISION_NOTE.md) | Official arXiv acquisition routes, Requester Pays constraints, storage/rights policy, and staged retrieval plan. |
+| [`MATHDB_COLLECTION_SOURCE_INVENTORY_v1.json`](data/MATHDB_COLLECTION_SOURCE_INVENTORY_v1.json) | Machine-readable collection provenance inventory; contains no copied source statements or asserted MathDB membership. |
+| [`MATHDB_COLLECTION_EXTERNAL_EVIDENCE_v1.json`](data/MATHDB_COLLECTION_EXTERNAL_EVIDENCE_v1.json) | Hash-only evidence for six authoritative collection/index artifacts. |
+| [`MATHDB_COLLECTION_ULAM_OVERLAP_v1.jsonl`](data/MATHDB_COLLECTION_ULAM_OVERLAP_v1.jsonl) | 7,489 frozen-Ulam collection records represented by hashes and JSON pointers, not duplicated statement text. |
 | [`Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz`](https://media.githubusercontent.com/media/alejandrozu/ulam-opdp-difficulty-atlas/main/data/Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz) | Historical 15,458-record statement-bearing compatibility payload. |
 | [`Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx`](https://media.githubusercontent.com/media/alejandrozu/ulam-opdp-difficulty-atlas/main/data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx) | Current workbook for the historical 15,458-record v1.6 scope, with the profile table, rationales, dashboard, cohort analysis, source summaries, formula audit, QA queue, and rubric. v1.7 is JSON-only. |
 | [`OPDP_v1.6_Source_Provenance.json.gz`](data/OPDP_v1.6_Source_Provenance.json.gz) | Machine-readable source sidecar joining every problem to its cohort, Ulam collection, and finest recoverable natural source document. |
@@ -64,6 +70,17 @@ The current expansion is deliberately non-destructive:
 The MathDB acquisition schema is `opdp.mathdb.problem-summary.v1`. Each envelope's exact public-list `problem` object is preserved under `source_record`, but the assessed mathematical text is only `problem.excerpt`. MathDB does not guarantee that excerpt to be a full statement. Consequently every addition carries `source_excerpt_only` and `needs_curation`; all assigned confidence fields are C0; intervals are widened; and all ten rationales disclose that the scores require recalibration from a complete statement.
 
 MathDB's richer detail endpoint limits clients to 500 unique problems per day, while [its Terms](https://mathdb.com/terms) direct bulk-data users to contact the administrators. This project did not evade that limit. It froze the complete sitemap inventory, used the supported public catalog surface, and makes no claim to have downloaded 87,105 full statements. See the [v1.7 append-only notes](docs/OPDP_v1.7_APPEND_ONLY_NOTES.md) for the exact acquisition and validation contract.
+
+## Source-statement recovery workstream
+
+The v1.7 payload remains immutable while statement recovery proceeds through a separate, append-only evidence ledger. The recovery system begins from the frozen 87,105-item MathDB catalog—not from inferred website records—and makes every conclusion auditable against a content hash, source locator, and stated transformation.
+
+- 87,105 canonical recovery tasks have been generated locally in immutable shards and verified against the frozen catalog hash.
+- The source manifest identifies 42,371 normalized arXiv works linked from 66,330 MathDB tasks (66,378 retained source-lead rows); DOI and recognized mirror aliases retain their original provenance while resolving to an official arXiv identifier.
+- The five named collection candidates have a separate hash-only source inventory and a 7,489-record frozen-Ulam overlap sidecar. Differences between the MathDB planning counts, Ulam overlaps, and upstream collection counts are preserved rather than silently reconciled.
+- A record can be labelled `exact_source`, `faithful_normalization`, `contextual_reconstruction`, or `unresolved`. Only the first two may ever enter a later rescoring queue—and only after a self-contained statement, exact locator, independent `verified_open` evidence, and curator sign-off.
+
+No v1.7 MathDB score has been refreshed by this workstream. The source files themselves are not bundled: arXiv and collection-source rights must be respected, so public evidence stores locators, hashes, and permitted restatements rather than a mirror of source text. The [recovery protocol](docs/MATHDB_STATEMENT_RECOVERY_PROTOCOL.md), [collection inventory](docs/MATHDB_COLLECTION_RECOVERY_INVENTORY.md), and [arXiv acquisition note](docs/ARXIV_BULK_RECOVERY_DECISION_NOTE.md) define the reproducible route from excerpt-only records to a future, separately versioned recovery release.
 
 ## v1.6 append-only compatibility
 

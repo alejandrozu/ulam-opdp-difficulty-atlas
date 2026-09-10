@@ -1,0 +1,180 @@
+{
+  "schema": "opdp.mathdb.collection-source-registry.v1",
+  "registry_version": "1.0.0",
+  "purpose": "Source-inventory specification for the five named MathDB collection candidates. The requested MathDB counts are tracking targets only: the frozen MathDB public-list summaries do not expose a collection-membership field, so they are not assertions of exact MathDB membership.",
+  "frozen_ulam_membership_method": {
+    "id": "frozen_ulam_provenance_exact_match_v1",
+    "description": "A record is in a Ulam overlap only when its frozen v1.6 provenance.source_collection_id, provenance.source_collection_label, and display problem_number all meet the collection rule below. This is evidence about the frozen Ulam corpus, not proof that a MathDB record belongs to the same external collection."
+  },
+  "collections": [
+    {
+      "key": "erdos",
+      "display_name": "Erdős Problems",
+      "project_requested_mathdb_target_count": 1171,
+      "mathdb_membership_status": "not_asserted_no_native_collection_field",
+      "ulam_overlap_rule": {
+        "source_collection_id": 8,
+        "source_collection_label": "Erdős Problems",
+        "problem_number_regex": "^EP-[0-9]+$",
+        "expected_count": 632
+      },
+      "mathdb_discovery_signal": {
+        "kind": "strict_title_prefix",
+        "regex": "^Erd[oöő]s Problem #[0-9]+\\b",
+        "interpretation": "Discovery-only. A matching MathDB title is not treated as an external-collection membership assertion or a statement-identity match."
+      },
+      "sources": [
+        {
+          "key": "erdosproblems_ground_truth_yaml",
+          "role": "versioned_structured_collection_inventory",
+          "canonical_url": "https://github.com/teorth/erdosproblems/blob/3c68e941162f81d650fc886eed34e58bed3a6a01/data/problems.yaml",
+          "retrieval_url": "https://raw.githubusercontent.com/teorth/erdosproblems/3c68e941162f81d650fc886eed34e58bed3a6a01/data/problems.yaml",
+          "pinned_revision": "3c68e941162f81d650fc886eed34e58bed3a6a01",
+          "format": "yaml",
+          "content_sha256_expected": "3e9ab5fb8b479274af52112aec8e7910e9bd9470feef8d4830d67a8d5fd20bcb",
+          "count_extractor": {
+            "kind": "line_prefix_count",
+            "prefix": "- number:",
+            "expected_count": 1217,
+            "interpretation": "Count of top-level problem records in this pinned upstream YAML snapshot; it is not the requested MathDB target count."
+          },
+          "reuse": {
+            "license": "Apache-2.0",
+            "license_url": "https://github.com/teorth/erdosproblems/blob/3c68e941162f81d650fc886eed34e58bed3a6a01/LICENSE",
+            "caveat": "The repository license covers the repository work. Preserve required notices and separately review rights in cited original papers, quotations, images, and external links."
+          }
+        },
+        {
+          "key": "erdosproblems_public_site",
+          "role": "public_collection_presentation",
+          "canonical_url": "https://www.erdosproblems.com/",
+          "retrieval_url": "https://www.erdosproblems.com/",
+          "format": "html",
+          "reuse": {
+            "license": "not_established_by_this_inventory",
+            "caveat": "Use the versioned repository asset above for reproducible structured metadata. Do not infer a reuse license for site prose merely from public access."
+          }
+        }
+      ]
+    },
+    {
+      "key": "aim",
+      "display_name": "AIM Workshop Problem Lists",
+      "project_requested_mathdb_target_count": 3165,
+      "mathdb_membership_status": "not_asserted_no_native_collection_field",
+      "ulam_overlap_rule": {
+        "source_collection_id": 14,
+        "source_collection_label": "AIM Workshop Problem Lists",
+        "problem_number_regex": "^AIM-.+$",
+        "expected_count": 3359
+      },
+      "sources": [
+        {
+          "key": "aim_problem_lists_index",
+          "role": "official_collection_index",
+          "canonical_url": "https://aimath.org/problemlists/",
+          "retrieval_url": "https://aimath.org/problemlists/",
+          "format": "html",
+          "reuse": {
+            "license": "not_established_by_this_inventory",
+            "caveat": "The index links to many independently authored workshop lists in PDF and AIMPL forms. Retain the individual workshop URL and review its terms before copying a full statement or redistributing source text."
+          }
+        }
+      ]
+    },
+    {
+      "key": "amr",
+      "display_name": "AMR Open Problem Lists",
+      "project_requested_mathdb_target_count": 3189,
+      "mathdb_membership_status": "not_asserted_no_native_collection_field",
+      "ulam_overlap_rule": {
+        "source_collection_id": 13,
+        "source_collection_label": "AMR Open Problem Lists",
+        "problem_number_regex": "^AMR-[0-9]+-[0-9]+$",
+        "expected_count": 3342
+      },
+      "sources": [
+        {
+          "key": "amr_resources_index",
+          "role": "official_problem_list_directory",
+          "canonical_url": "https://amathr.org/resources/",
+          "retrieval_url": "https://amathr.org/resources/",
+          "format": "html",
+          "reuse": {
+            "license": "not_established_by_this_inventory",
+            "caveat": "AMR is a directory to many source lists. A directory page is provenance for discovery, not a blanket license or a statement-level origin record; retain and evaluate each linked source separately."
+          }
+        }
+      ]
+    },
+    {
+      "key": "kourovka",
+      "display_name": "Kourovka Notebook, Issue 21 new problems",
+      "project_requested_mathdb_target_count": 150,
+      "mathdb_membership_status": "not_asserted_no_native_collection_field",
+      "ulam_overlap_rule": {
+        "source_collection_id": 10,
+        "source_collection_label": "Kourovka Notebook - New Problems, Issue 21",
+        "problem_number_regex": "^KOU-21\\.[0-9]+$",
+        "expected_count": 150
+      },
+      "mathdb_discovery_signal": {
+        "kind": "strict_title_prefix",
+        "regex": "^Kourovka Notebook Problem 21\\.[0-9]+\\b",
+        "interpretation": "Discovery-only. The exact edition-and-number title pattern makes these high-quality matching candidates, but an external source locator is still required before assigning a recovery label."
+      },
+      "sources": [
+        {
+          "key": "kourovka_issue_21_announcement",
+          "role": "official_edition_announcement",
+          "canonical_url": "https://kourovkanotebookorg.wordpress.com/2026/01/09/the-new-21-st-edition-of-kourovka-notebook/",
+          "retrieval_url": "https://kourovkanotebookorg.wordpress.com/2026/01/09/the-new-21-st-edition-of-kourovka-notebook/",
+          "format": "html",
+          "count_extractor": {
+            "kind": "required_regex",
+            "regex": "contains 150 new problems",
+            "flags": "i",
+            "expected_match_count": 2,
+            "claimed_count": 150,
+            "interpretation": "The retrieved official announcement states the issue's new-problem count. It is an edition-level count, not a verification that every candidate remains open."
+          },
+          "statement_artifact_url": "https://alglog.org/21tkt.pdf",
+          "reuse": {
+            "license": "not_established_by_this_inventory",
+            "caveat": "The inventory retains only an announcement hash, not the issue PDF or its prose. Acquire and use the statement artifact only after a source-specific rights review."
+          }
+        }
+      ]
+    },
+    {
+      "key": "millennium",
+      "display_name": "Millennium Prize Problems (six unresolved)",
+      "project_requested_mathdb_target_count": 6,
+      "mathdb_membership_status": "not_asserted_no_native_collection_field",
+      "ulam_overlap_rule": {
+        "source_collection_id": 1,
+        "source_collection_label": "Millennium Prize Problems",
+        "problem_number_regex": "^MPP-[0-9]+$",
+        "expected_count": 6
+      },
+      "sources": [
+        {
+          "key": "clay_millennium_landing_page",
+          "role": "official_collection_landing_page",
+          "canonical_url": "https://www.claymath.org/millennium-problems/",
+          "retrieval_url": "https://www.claymath.org/millennium-problems/",
+          "format": "html",
+          "manual_count_assertion": {
+            "claimed_count": 6,
+            "interpretation": "The official page distinguishes the six unsolved problems from the historical seven-problem prize set. This is a collection-level status fact, not a current-proof or statement-completeness verification."
+          },
+          "statement_artifact_url": "https://www.claymath.org/library/monographs/MPPc.pdf",
+          "reuse": {
+            "license": "not_established_by_this_inventory",
+            "caveat": "Do not redistribute source chapters, diagrams, or prose from the Clay materials on the basis of this metadata inventory. Link to the official source and obtain permission or a specific license before republication."
+          }
+        }
+      ]
+    }
+  ]
+}
