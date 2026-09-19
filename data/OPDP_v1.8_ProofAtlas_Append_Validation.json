@@ -1,0 +1,41 @@
+{
+  "validation_schema_version": "1.0.0",
+  "release_version": "1.8.0",
+  "rule_version": "OPDP-1.0-rulepass-2026-07-31",
+  "status": "pass",
+  "inputs": {
+    "base_export_id": "opdp-v1.7.0__OPDP-1.0-rulepass-2026-07-31",
+    "base_version": "1.7.0",
+    "base_count": 102563,
+    "proofatlas_count": 256,
+    "proofatlas_sha256": "C15E03B28C65CAE84E8788B6EF7CDAC56733C323041A1F9CCFE1884B789A0FCE",
+    "curated_schema": "opdp.proofatlas.curated-problem.v1",
+    "manifest_used": true
+  },
+  "outputs": {
+    "records_total": 102819,
+    "additions": 256,
+    "first_proofatlas_id": 50000010,
+    "last_proofatlas_id": 51000265,
+    "output_path": "C:\\Users\\Propietario\\Documents\\Codex\\2026-07-31\\he\\work\\repo-current\\data\\Ulam_MathDB_ProofAtlas_OPDP_Assessments_v1.8.json.gz",
+    "output_sha256": "588153F0F188722C8876399930262AB989D197EB10FDF95C26DB0EE4DBE910E5",
+    "output_bytes": 62168329
+  },
+  "checks": {
+    "legacy_v17_deep_digest_unchanged": true,
+    "legacy_v17_header_digest_unchanged": true,
+    "unique_problem_ids": true,
+    "stable_reversible_proofatlas_ids": true,
+    "collision_free_proofatlas_display_identifiers": true,
+    "lossless_curated_source_records": true,
+    "all_assigned_dimensions_c0": true,
+    "verified_open_never_emitted": true,
+    "canonical_record_schema_unchanged": true,
+    "streamed_v17_base_copy": true
+  },
+  "limitations": [
+    "This builder performs no network retrieval.",
+    "All ProofAtlas additions are C0 provisional intake assessments.",
+    "Source-declared status is not independently verified and is never promoted to verified_open."
+  ]
+}

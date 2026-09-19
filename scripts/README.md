@@ -32,6 +32,21 @@ implicitly triggered by any release builder.  The separate metadata worker
 only builds immutable, rate-limited API evidence to inform a later S3 mapping;
 it does not alter v1.7 or recover a mathematical statement on its own.
 
+## ProofAtlas v1.8 guarded append
+
+`build_proofatlas_append_v1_8.py` is an offline v1.7-to-v1.8 append builder.
+It accepts only an explicit, locally frozen and curator-approved ProofAtlas
+JSONL contract with a declared statement-provenance/rights mode, copies every
+v1.7 record through streaming record and header-digest gates, uses the separate
+`50,000,000 + namespace_number` identifier namespace, and retains every curator
+envelope losslessly. It deliberately emits only C0, provisional estimates and
+never marks a ProofAtlas record `verified_open`.
+The checked-in v1.8 release is built from the public-safe curator input and
+manifest in `data/`; source snapshots remain local evidence. See
+[`../docs/PROOFATLAS_APPEND_PROTOCOL.md`](../docs/PROOFATLAS_APPEND_PROTOCOL.md)
+and [`../docs/OPDP_v1.8_PROOFATLAS_APPEND_NOTES.md`](../docs/OPDP_v1.8_PROOFATLAS_APPEND_NOTES.md)
+for the release contract and limitations.
+
 ## v1.7 MathDB append-only expansion (current)
 
 The v1.7 pipeline freezes the exact 87,105-item MathDB inventory, captures the corresponding public catalog list items, and appends them to the 15,458-record v1.6 OPDP base. The complete release contains 102,563 records. It is JSON-only: no 102,563-row workbook is generated.

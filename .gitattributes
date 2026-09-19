@@ -4,9 +4,18 @@ CHECKSUMS.sha256 text eol=lf
 data/OPDP_v1.6_*.csv text eol=lf
 data/OPDP_v1.6_*_Validation.json text eol=lf
 docs/OPDP_v1.6_*.md text eol=lf
+data/OPDP_v1.8_*_Validation.json text eol=lf
+data/PROOFATLAS_* text eol=lf
+docs/OPDP_v1.8_*.md text eol=lf
+docs/PROOFATLAS_*.md text eol=lf
+fixtures/proofatlas_* text eol=lf
 scripts/*.py text eol=lf
 scripts/*.mjs text eol=lf
 scripts/*.md text eol=lf
+scripts/mathdb_recovery/*.py text eol=lf
+scripts/mathdb_recovery/tests/*.py text eol=lf
+scripts/tests/*.py text eol=lf
 data/Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz filter=lfs diff=lfs merge=lfs -text
 data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx filter=lfs diff=lfs merge=lfs -text
 data/Ulam_MathDB_OPDP_Assessments_v1.7.json.gz filter=lfs diff=lfs merge=lfs -text
+data/Ulam_MathDB_ProofAtlas_OPDP_Assessments_v1.8.json.gz filter=lfs diff=lfs merge=lfs -text

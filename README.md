@@ -1,12 +1,12 @@
 # OPDP Difficulty Atlas
 
-An auditable Open Problem Difficulty Profile (OPDP) for **102,563 records**: 15,458 statement-bearing records preserved from three frozen UnsolvedMath cohorts, plus 87,105 exact MathDB public-catalog items appended in v1.7. MathDB supplies only a public-list excerpt for this complete-catalog surface, so every new assessment is explicitly excerpt-based, flagged for recalibration, and capped at C0 confidence.
+An auditable Open Problem Difficulty Profile (OPDP) for **102,819 records**: 15,458 statement-bearing records preserved from three frozen UnsolvedMath cohorts, 87,105 exact MathDB public-catalog items appended in v1.7, and 256 source-linked ProofAtlas intake records appended in v1.8. MathDB items are excerpt-based; ProofAtlas items are curator-authored source normalizations. Both append cohorts are explicitly provisional and capped at C0 confidence.
 
 **Author:** Alejandro Zarzuelo Urdiales with ChatGPT 5.6 Sol  
 
 **Original assessment date:** 2026-07-31
 
-**Latest append-only expansion date:** 2026-09-08
+**Latest append-only expansion date:** 2026-09-19
 
 The atlas replaces a single, ambiguous notion of “difficulty” with a granular profile covering intrinsic mathematical difficulty, AI-relative difficulty, human attention, tractability, verification burden, formalization burden, prerequisite depth, breadth, and tool leverage. Every problem includes concise public justifications so that assessments can be audited and revised.
 
@@ -14,6 +14,11 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 
 | File | Purpose |
 |---|---|
+| [`Ulam_MathDB_ProofAtlas_OPDP_Assessments_v1.8.json.gz`](https://media.githubusercontent.com/media/alejandrozu/ulam-opdp-difficulty-atlas/main/data/Ulam_MathDB_ProofAtlas_OPDP_Assessments_v1.8.json.gz) | **Recommended website-import payload.** Direct Git LFS download of all 102,819 append-only OPDP records, including 256 conservative ProofAtlas intake records. |
+| [`OPDP_v1.8_ProofAtlas_Append_Validation.json`](data/OPDP_v1.8_ProofAtlas_Append_Validation.json) | Build validation of full v1.7 preservation, ProofAtlas IDs, source-envelope retention, C0 controls, and the no-`verified_open` rule. |
+| [`OPDP_v1.8_PROOFATLAS_APPEND_NOTES.md`](docs/OPDP_v1.8_PROOFATLAS_APPEND_NOTES.md) | Scope, identity-review method, source/reuse boundary, limitations, and compatibility contract for the v1.8 append. |
+| [`PROOFATLAS_CURATED_APPEND_v1.jsonl`](data/PROOFATLAS_CURATED_APPEND_v1.jsonl) | Frozen public-safe, curator-authored input for the 256-record append; contains source locators and no copied ProofAtlas target/card prose. |
+| [`PROOFATLAS_CURATED_APPEND_MANIFEST_v1.json`](data/PROOFATLAS_CURATED_APPEND_MANIFEST_v1.json) | Hash/count manifest binding the curated ProofAtlas input to the release. |
 | [`Ulam_MathDB_OPDP_Assessments_v1.7.json.gz`](https://media.githubusercontent.com/media/alejandrozu/ulam-opdp-difficulty-atlas/main/data/Ulam_MathDB_OPDP_Assessments_v1.7.json.gz) | **Recommended website-import payload.** Direct Git LFS download of all 102,563 append-only OPDP records. The 87,105 MathDB additions retain exact public-list items and incomplete `excerpt` text, not full statements. |
 | [`OPDP_v1.7_MathDB_Append_Validation.json`](data/OPDP_v1.7_MathDB_Append_Validation.json) | Builder validation of append-only equality, IDs, source-item preservation, formulas, C0 excerpt controls, rationales, and summary counts. |
 | [`OPDP_v1.7_Independent_Validation.json`](data/OPDP_v1.7_Independent_Validation.json) | Independent streaming validation against the frozen sitemap inventory and MathDB catalog manifest. |
@@ -57,7 +62,19 @@ The atlas replaces a single, ambiguous notion of “difficulty” with a granula
 
 All five original deliverables are also attached to the [tagged v1.2 GitHub release](https://github.com/alejandrozu/ulam-opdp-difficulty-atlas/releases/tag/v1.2.0-opdp1.0). The v1.2, v1.5, and v1.6 files remain available as immutable historical compatibility artifacts.
 
-The v1.7 JSON and the large v1.6 artifacts are stored with Git LFS. The links above target GitHub's media endpoint and return the actual binary files; `raw.githubusercontent.com` returns only the small LFS pointer. A normal clone with Git LFS installed materializes them automatically.
+The v1.8 and v1.7 JSON payloads, together with the large v1.6 artifacts, are stored with Git LFS. The links above target GitHub's media endpoint and return the actual binary files; `raw.githubusercontent.com` returns only the small LFS pointer. A normal clone with Git LFS installed materializes them automatically.
+
+## v1.8 ProofAtlas append-only compatibility
+
+The latest expansion is deliberately conservative and non-destructive:
+
+- all 102,563 v1.7 records remain deep-equal; the v1.7 header is digest-gated while the v1.8 release metadata is regenerated;
+- 208 separately scoped targets from ProofAtlas Top 500 v16 and 48 from its Collaboration directory are appended, producing 102,819 records;
+- new IDs are reversible and isolated: `50,000,000 + releaseRank` for Top 500 additions, and `50,000,000 + 1,000,000 + frozenCardOrdinal` for Collaboration additions;
+- each appended statement is an independently authored curator normalization linked to the source, not a copied ProofAtlas target/card statement; and
+- every new assessment dimension is C0 provisional, while source-published status is retained only as `source_claimed_open` or `status_unclear`, never `verified_open`.
+
+The [v1.8 append-only notes](docs/OPDP_v1.8_PROOFATLAS_APPEND_NOTES.md) document the full 500-record Top 500 review, 268-card collaboration review, public-safe evidence artifacts, source hashes, and release limits.
 
 ## v1.7 MathDB append-only compatibility
 
