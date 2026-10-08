@@ -19,3 +19,7 @@ data/Ulam_UnsolvedMath_OPDP_Assessments_v1.6.json.gz filter=lfs diff=lfs merge=l
 data/Ulam_UnsolvedMath_Difficulty_Atlas_v1.6.xlsx filter=lfs diff=lfs merge=lfs -text
 data/Ulam_MathDB_OPDP_Assessments_v1.7.json.gz filter=lfs diff=lfs merge=lfs -text
 data/Ulam_MathDB_ProofAtlas_OPDP_Assessments_v1.8.json.gz filter=lfs diff=lfs merge=lfs -text
+docs/OpenAI_Mathematics_OPDP_Assessment_2026-10-07.pdf binary
+docs/OpenAI_Mathematics_OPDP_Executive_Brief_2026-10-08.pdf binary
+docs/OpenAI_Mathematics_OPDP_Assessment_2026-10-07.json text eol=lf
+docs/OpenAI_Mathematics_OPDP_Publication_2026-10-08.json text eol=lf

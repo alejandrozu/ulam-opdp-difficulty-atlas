@@ -1,0 +1,60 @@
+{
+  "schema": "opdp.openai-math-publication.v1",
+  "assessment_date": "2026-10-07",
+  "publication_date": "2026-10-08",
+  "author": "Alejandro Zarzuelo Urdiales",
+  "authorship_scope": "Creator and author of OPDP; ChatGPT-assisted assessment and briefing",
+  "repository": "https://github.com/alejandrozu/ulam-opdp-difficulty-atlas",
+  "source_snapshot": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "comparison_atlas_snapshot": "e0e18186a142fb4f61cfc06716aac4fb31bc3b81",
+  "comparison_atlas_version": "1.8.0",
+  "comparison_atlas_records": 102819,
+  "manuscripts": 722,
+  "upstream_result_families": 372,
+  "disciplines": 17,
+  "archive_relations": {
+    "related_target": 287,
+    "partial_or_special_case": 91,
+    "lexical_candidate": 147,
+    "same_target": 59,
+    "unresolved_no_match": 138
+  },
+  "assessment_status": "provisional_source_scope_review_not_proof_certification",
+  "canonical_atlas_modified": false,
+  "publication_changes": {
+    "json": "Unmodified public scoring JSON from the 7 October assessment",
+    "pdf": "Public-facing reference and authorship wording on pages 1 and 5 only; every individual assessment unchanged",
+    "brief": "New dense one-page synthesis of methodological contribution, importance, results and limits"
+  },
+  "validation": {
+    "full_pdf_pages": 254,
+    "brief_pdf_pages": 1,
+    "all_722_manuscript_entries_once": true,
+    "unchanged_pdf_pages_2_3_4_and_6_through_254": true,
+    "json_matches_original_public_export_sha256": true,
+    "brief_text_within_page": true,
+    "brief_has_report_json_repository_links": true,
+    "private_correspondence_framing_removed": true
+  },
+  "audit_cache_notice": "Relative cache paths in the JSON are locators for unpublished local audit caches, not delivered repository files. Public source URLs and hashes are provided.",
+  "artifacts": [
+    {
+      "path": "docs/OpenAI_Mathematics_OPDP_Executive_Brief_2026-10-08.pdf",
+      "purpose": "One-page executive brief, authored 8 October 2026",
+      "bytes": 79638,
+      "sha256": "7b8d3f63a33070f1f0fb17722c529a0346104e11027d04e8009550e555451f9b"
+    },
+    {
+      "path": "docs/OpenAI_Mathematics_OPDP_Assessment_2026-10-07.pdf",
+      "purpose": "Full 254-page assessment, public-facing edition",
+      "bytes": 1348224,
+      "sha256": "63a61a7f156ba6db1fee302ff4ae0a692604824a0c9c92f0bb23fbb9810e7b23"
+    },
+    {
+      "path": "docs/OpenAI_Mathematics_OPDP_Assessment_2026-10-07.json",
+      "purpose": "Unmodified 722-manuscript machine-readable assessment",
+      "bytes": 7530955,
+      "sha256": "677bd7132ee340c6b3cf2403477f29e46ef665c060daf7ccb58682851184473b"
+    }
+  ]
+}

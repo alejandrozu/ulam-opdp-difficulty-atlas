@@ -10,6 +10,17 @@ An auditable Open Problem Difficulty Profile (OPDP) for **102,819 records**: 15,
 
 The atlas replaces a single, ambiguous notion of “difficulty” with a granular profile covering intrinsic mathematical difficulty, AI-relative difficulty, human attention, tractability, verification burden, formalization burden, prerequisite depth, breadth, and tool leverage. Every problem includes concise public justifications so that assessments can be audited and revised.
 
+## OpenAI mathematics release: OPDP research assessment
+
+Alejandro Zarzuelo Urdiales's OPDP framework is applied to **all 722 manuscripts**, grouped upstream into **372 result families across 17 disciplines**, in OpenAI's 6 October 2026 mathematics release. The assessment compares each stated target with the frozen **102,819-record v1.8 atlas**, distinguishes exact scope from special cases and related claims, and supplies individual descriptions, justified 0-1000 difficulty assessments, and conditional OpenMath judging calculations.
+
+- [One-page executive brief](docs/OpenAI_Mathematics_OPDP_Executive_Brief_2026-10-08.pdf): the author's methodological contribution, key findings, research significance, and evidence limits.
+- [Full 254-page analysis](docs/OpenAI_Mathematics_OPDP_Assessment_2026-10-07.pdf): all 722 manuscript assessments, published as a public-facing edition on 8 October 2026.
+- [Machine-readable scoring and rationale JSON](docs/OpenAI_Mathematics_OPDP_Assessment_2026-10-07.json): precise targets, source links/hashes, component inputs, calculation traces, and scope/progress justifications.
+- [Publication manifest](docs/OpenAI_Mathematics_OPDP_Publication_2026-10-08.json): file hashes, counts, source snapshots, and validation checks.
+
+**This is a separate provisional research-assessment overlay, not an expansion or status refresh of the canonical atlas.** The 59 same-target scope matches are not certified resolutions. New ratings are source-based editorial estimates, not empirically calibrated AI success probabilities or accepted competition awards. No solve campaign, full proof audit, or Lean kernel replay was performed. Conditional manuscript points cannot be summed as independent family awards. Relative `cache/` paths in the JSON identify unpublished audit-cache artifacts; use the accompanying pinned public source URLs to retrieve the manuscripts. The public-facing PDF removes private-correspondence framing while preserving every manuscript assessment. The [brief builder](scripts/build_openai_opdp_executive_brief.py) validates its aggregate claims against the published PDF and JSON.
+
 ## Files
 
 | File | Purpose |
