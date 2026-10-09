@@ -1,0 +1,69 @@
+{
+  "schema": "opdp.openai-math-publication.v2",
+  "assessment_date": "2026-10-07",
+  "original_publication_date": "2026-10-08",
+  "brief_revision_and_overview_date": "2026-10-09",
+  "author": "Alejandro Zarzuelo Urdiales",
+  "authorship_scope": "Creator and author of OPDP; analysis and explanatory briefs",
+  "repository": "https://github.com/alejandrozu/ulam-opdp-difficulty-atlas",
+  "prior_publication_commit": "58c43ecb3072bfbd7ede1ecaa2a10fdd9f6ca12b",
+  "source_snapshot": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "comparison_atlas_snapshot": "e0e18186a142fb4f61cfc06716aac4fb31bc3b81",
+  "comparison_atlas_version": "1.8.0",
+  "comparison_atlas_records": 102819,
+  "manuscripts": 722,
+  "upstream_result_families": 372,
+  "disciplines": 17,
+  "archive_relations": {
+    "related_target": 287,
+    "partial_or_special_case": 91,
+    "lexical_candidate": 147,
+    "same_target": 59,
+    "unresolved_no_match": 138
+  },
+  "canonical_atlas_modified": false,
+  "assessment_scores_modified": false,
+  "publication_changes": {
+    "technical_brief": "Removed the byline preparation label and model-specific protocol sentence; added the requested newer/diverse-model refinement history. The full analysis's score assumptions are unchanged.",
+    "overview": "New, less-dense professional synopsis with direct links to the technical brief, full report, and open repository.",
+    "full_report_and_json": "Unmodified from the 8 October public edition."
+  },
+  "validation": {
+    "technical_brief_pages": 1,
+    "overview_pages": 1,
+    "technical_brief_words": 766,
+    "overview_words": 353,
+    "overview_under_half_technical_word_count": true,
+    "requested_removals_and_refinement_present": true,
+    "overview_links_both_papers_and_repository": true,
+    "full_report_and_json_hashes_unchanged": true,
+    "both_final_page_renders_visually_reviewed": true
+  },
+  "assessment_status": "provisional_source_scope_review_not_proof_certification",
+  "artifacts": [
+    {
+      "path": "docs/OpenAI_Mathematics_OPDP_Executive_Brief_2026-10-08.pdf",
+      "purpose": "Technical one-page executive brief; wording revised 9 October 2026",
+      "bytes": 79659,
+      "sha256": "e2ea219064d4897cdf7d62cd15ce18e87fa510662288536b99fff8cdafa841a9"
+    },
+    {
+      "path": "docs/OpenAI_Mathematics_OPDP_Overview_2026-10-09.pdf",
+      "purpose": "Accessible professional one-page overview; created 9 October 2026",
+      "bytes": 76894,
+      "sha256": "7b57959b27471621aca06cd9c3ed4ff7bdbfe26d6bef6fc61fdedb3466d4f274"
+    },
+    {
+      "path": "docs/OpenAI_Mathematics_OPDP_Assessment_2026-10-07.pdf",
+      "purpose": "Unchanged full 254-page assessment, public-facing edition",
+      "bytes": 1348224,
+      "sha256": "63a61a7f156ba6db1fee302ff4ae0a692604824a0c9c92f0bb23fbb9810e7b23"
+    },
+    {
+      "path": "docs/OpenAI_Mathematics_OPDP_Assessment_2026-10-07.json",
+      "purpose": "Unchanged 722-manuscript scoring and rationale JSON",
+      "bytes": 7530955,
+      "sha256": "677bd7132ee340c6b3cf2403477f29e46ef665c060daf7ccb58682851184473b"
+    }
+  ]
+}

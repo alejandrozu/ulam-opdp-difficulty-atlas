@@ -69,13 +69,14 @@ def main() -> None:
     left_sections = [
         ("THE AUTHOR'S CONTRIBUTION: OPDP",
          "<b>Alejandro Zarzuelo Urdiales created and authored the Open Problem Difficulty "
-         "Profile (OPDP), with ChatGPT 5.6 Sol assistance.</b> It replaces an opaque difficulty "
-         "label with explicit dimensions, public rationales, source identifiers and versioned "
-         "assessments. This analysis applies his framework to OpenAI's mathematics release: "
-         "every manuscript receives a mathematical description, a precisely stated scoring "
+         "Profile (OPDP), with ChatGPT 5.6 Sol assistance.</b> The framework was further "
+         "refined with newer and diverse models to capture the multidimensional complexity "
+         "of mathematics. OPDP replaces opaque labels with explicit dimensions, public "
+         "rationales, source identifiers and versioned assessments. Applied here to OpenAI's "
+         "mathematics release, it gives every manuscript a description, a precise scoring "
          "target, an archive relation, a justified difficulty assessment and a conditional "
-         "OpenMath judging calculation. OPDP is the mechanism connecting a large catalogue "
-         "of claims to inspectable research judgments."),
+         "OpenMath judging calculation. It connects a large catalogue of claims to "
+         "inspectable research judgments."),
         ("WHY THIS ANALYSIS MATTERS",
          "<b>The unit of mathematical progress is a scoped result, not a paper count.</b> "
          "General theorems, conditional results, finite constructions, special cases and "
@@ -93,8 +94,8 @@ def main() -> None:
          "constraints (30). Discovery, checking and formal encoding are therefore "
          "separate obstacles. For weighted burden <b>R</b>, the published transformation "
          "is <b>D = 1000[1 - (1 - R/1000)<super>1.4</super>]</b>; new estimates are rounded "
-         "to 25. The fixed target protocol is ChatGPT 5.6 Sol Ultra, public literature "
-         "and computational/proof tools, with a nominal 100-agent-hour ceiling. Unknown "
+         "to 25. Scores assume access to public literature and computational/proof tools, "
+         "with a nominal 100-agent-hour ceiling. Unknown "
          "human attention is neutral (0.5), not invented historical effort."),
         ("FROM PROFILE TO JUDGING",
          "Under the OpenMath non-focus scenario, <b>F = m p D<super>2</super>/1000</b>: "
@@ -186,7 +187,7 @@ def main() -> None:
     y = paragraph("Making AI-generated mathematics<br/>auditable with OPDP", margin,
                   y, width - 2 * margin, "title") - 7
     y = paragraph("<b>Alejandro Zarzuelo Urdiales</b> | Creator and author of OPDP<br/>"
-                  "Executive research brief | AI-assisted preparation | 8 October 2026",
+                  "Executive research brief | Revised 9 October 2026",
                   margin, y, width - 2 * margin, "subtitle") - 13
     strip_h = 45
     c.setFillColor(LIGHT)
@@ -247,7 +248,8 @@ def main() -> None:
     assert report_url in links and json_url in links and REPO in links
     validation = {
         "schema": "opdp.openai-executive-brief-validation.v1",
-        "date": "2026-10-08", "pages": 1, "all_text_boxes_inside_page": True,
+        "date": "2026-10-09", "original_date": "2026-10-08",
+        "pages": 1, "all_text_boxes_inside_page": True,
         "body_font_pt": styles["body"].fontSize,
         "column_bottoms": column_bottoms, "footer_bottom": footer_top,
         "full_report_pages": 254, "manuscripts": 722, "families": 372,
